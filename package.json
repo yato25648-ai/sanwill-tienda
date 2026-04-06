@@ -1,0 +1,19 @@
+{
+  "name": "sanwill-tienda",
+  "version": "1.0.0",
+  "description": "Tienda en línea de bebidas tradicionales SANWILL",
+  "private": true,
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "start": "python3 -m http.server 8000"
+  },
+  "keywords": [
+    "tienda",
+    "bebidas",
+    "sanwill",
+    "limonada",
+    "salpicón"
+  ],
+  "author": "SANWILL",
+  "license": "MIT"
+}

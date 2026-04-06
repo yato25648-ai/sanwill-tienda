@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SANWILL - Comando de Hidratación</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial Black', Arial, sans-serif;
+            background: linear-gradient(135deg, #111827 0%, #1f2937 50%, #0f1419 100%);
+            color: #f3f4f6;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Efecto camuflaje en el fondo */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(45deg, rgba(212, 175, 55, 0.03) 25%, transparent 25%),
+                linear-gradient(-45deg, rgba(212, 175, 55, 0.03) 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, rgba(212, 175, 55, 0.03) 75%),
+                linear-gradient(-45deg, transparent 75%, rgba(212, 175, 55, 0.03) 75%);
+            background-size: 40px 40px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* HEADER MILITAR */
+        header {
+            background: linear-gradient(180deg, #0a0e16 0%, #1f2937 100%);
+            border-bottom: 4px solid #d4af37;
+            padding: 30px 0;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '⚔️';
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 40px;
+            opacity: 0.3;
+        }
+
+        header::after {
+            content: '⚔️';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 40px;
+            opacity: 0.3;
+        }
+
+        .header-content {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: clamp(28px, 6vw, 48px);
+            color: #d4af37;
+            text-shadow: 
+                2px 2px 4px rgba(0, 0, 0, 0.8),
+                0 0 10px rgba(212, 175, 55, 0.5);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+
+        .eslogan {
+            font-size: clamp(14px, 3vw, 20px);
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: bold;
+            margin-top: 8px;
+            border-top: 2px solid #d4af37;
+            border-bottom: 2px solid #d4af37;
+            padding: 8px 0;
+        }
+
+        .motto {
+            font-size: 13px;
+            color: #d4af37;
+            margin-top: 12px;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        /* SECCIÓN DE PRODUCTOS */
+        .productos-section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            color: #d4af37;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .section-title::before,
+        .section-title::after {
+            content: '▮';
+            display: inline-block;
+            margin: 0 15px;
+            font-size: 20px;
+        }
+
+        .productos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .producto-card {
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+            border: 3px solid #d4af37;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.15);
+            position: relative;
+        }
+
+        .producto-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.3);
+            border-color: #fff;
+        }
+
+        .producto-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #d4af37, transparent);
+            z-index: 10;
+        }
+
+        .producto-imagen {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 2px solid #d4af37;
+        }
+
+        .producto-info {
+            padding: 20px;
+        }
+
+        .producto-nombre {
+            font-size: 18px;
+            font-weight: 900;
+            color: #d4af37;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .producto-descripcion {
+            font-size: 13px;
+            color: #d1d5db;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .producto-precio {
+            font-size: 24px;
+            font-weight: 900;
+            color: #d4af37;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Selector Normal/Granizado */
+        .opciones-bebida {
+            margin-bottom: 12px;
+        }
+
+        .opciones-label {
+            font-size: 12px;
+            color: #9ca3af;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            display: block;
+            font-weight: bold;
+        }
+
+        .opciones-grupo {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .opcion-btn {
+            flex: 1;
+            padding: 8px 12px;
+            border: 2px solid #d4af37;
+            background: transparent;
+            color: #d4af37;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 12px;
+            transition: all 0.2s;
+            text-transform: uppercase;
+        }
+
+        .opcion-btn.activo {
+            background: #d4af37;
+            color: #111827;
+        }
+
+        .opcion-btn:hover {
+            background: #d4af37;
+            color: #111827;
+        }
+
+        /* Cantidad */
+        .cantidad-selector {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .cantidad-label {
+            font-size: 12px;
+            color: #9ca3af;
+            text-transform: uppercase;
+            flex: 1;
+            font-weight: bold;
+        }
+
+        .cantidad-controls {
+            display: flex;
+            border: 2px solid #d4af37;
+            border-radius: 4px;
+        }
+
+        .cantidad-btn {
+            width: 30px;
+            height: 30px;
+            border: none;
+            background: transparent;
+            color: #d4af37;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.2s;
+        }
+
+        .cantidad-btn:hover {
+            background: #d4af37;
+            color: #111827;
+        }
+
+        .cantidad-input {
+            width: 50px;
+            border: none;
+            background: transparent;
+            color: #d4af37;
+            text-align: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .cantidad-input:focus {
+            outline: none;
+        }
+
+        /* Botón Añadir */
+        .btn-agregar {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
+            color: #111827;
+            border: none;
+            font-weight: 900;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-agregar:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(212, 175, 55, 0.5);
+        }
+
+        .btn-agregar:active {
+            transform: scale(0.98);
+        }
+
+        /* CARRITO FLOTANTE */
+        .carrito-flotante {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
+            color: #111827;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            z-index: 100;
+            max-width: 300px;
+            border: 3px solid #111827;
+        }
+
+        .carrito-titulo {
+            font-size: 14px;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .carrito-count {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+
+        .carrito-total {
+            font-size: 18px;
+            font-weight: 900;
+            margin-bottom: 12px;
+            border-top: 2px solid #111827;
+            padding-top: 8px;
+        }
+
+        .carrito-items {
+            max-height: 150px;
+            overflow-y: auto;
+            margin-bottom: 12px;
+            font-size: 12px;
+            border-bottom: 2px solid #111827;
+            padding-bottom: 10px;
+        }
+
+        .carrito-item {
+            margin-bottom: 6px;
+            padding: 4px 0;
+            border-bottom: 1px solid rgba(17, 24, 39, 0.3);
+        }
+
+        .carrito-item-nombre {
+            font-weight: bold;
+        }
+
+        .carrito-item-cantidad {
+            color: #5a3817;
+            font-size: 11px;
+        }
+
+        .btn-completar {
+            width: 100%;
+            padding: 14px;
+            background: #111827;
+            color: #d4af37;
+            border: 2px solid #111827;
+            font-weight: 900;
+            font-size: 13px;
+            cursor: pointer;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .btn-completar:hover {
+            transform: scale(1.05);
+            box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        /* FORMULARIO */
+        .formulario-section {
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+            border: 3px solid #d4af37;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.1);
+        }
+
+        .formulario-titulo {
+            font-size: 24px;
+            color: #d4af37;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        .form-grupo {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 13px;
+            color: #9ca3af;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            background: #0a0e16;
+            border: 2px solid #d4af37;
+            color: #d4af37;
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+            border-color: #fff;
+        }
+
+        .form-input::placeholder {
+            color: #6b7280;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* BOTÓN PRINCIPAL */
+        .btn-whatsapp {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #25D366 0%, #20a84f 100%);
+            color: white;
+            border: none;
+            font-weight: 900;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.5);
+        }
+
+        .btn-whatsapp:active {
+            transform: scale(0.98);
+        }
+
+        /* FOOTER */
+        footer {
+            background: linear-gradient(180deg, #0a0e16 0%, #1f2937 100%);
+            border-top: 4px solid #d4af37;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 50px;
+            color: #9ca3af;
+        }
+
+        .footer-content p {
+            margin-bottom: 10px;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .footer-title {
+            font-size: 14px;
+            color: #d4af37;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .footer-eslogan {
+            font-size: 13px;
+            color: #d4af37;
+            font-style: italic;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid #d4af37;
+        }
+
+        /* TEXTOS MOTIVACIONALES */
+        .motivacional {
+            text-align: center;
+            font-size: 13px;
+            color: #d4af37;
+            margin-bottom: 30px;
+            font-style: italic;
+            letter-spacing: 1px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .productos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .carrito-flotante {
+                bottom: 15px;
+                right: 15px;
+                max-width: 280px;
+            }
+
+            .formulario-section {
+                padding: 20px;
+            }
+        }
+
+        /* Animación de alertas */
+        .alerta {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            z-index: 200;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .error {
+            background: #ef4444;
+        }
+
+        /* Ocultar carrito si está vacío */
+        .carrito-flotante.vacio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER MILITAR -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>⚙️ SANWILL ⚙️</h1>
+                <div class="eslogan">Comando de Hidratación</div>
+                <div class="motto">Hidratación Táctica para Guerreros</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- MOTIVACIÓN -->
+        <div class="motivacional">
+            "En la batalla por mantenerte hidratado, no hay rendición. Cada sorbo es un paso hacia la victoria."
+        </div>
+
+        <!-- SECCIÓN PRODUCTOS -->
+        <section class="productos-section">
+            <div class="section-title">Armamento Refrescante</div>
+
+            <div class="productos-grid">
+                <!-- MARACUYADA -->
+                <div class="producto-card">
+                    <img src="images/maracuyada.jpg" alt="Maracuyada" class="producto-imagen">
+                    <div class="producto-info">
+                        <div class="producto-nombre">Maracuyada</div>
+                        <div class="producto-descripcion">
+                            Refrescante bebida de maracuyá, perfecta para el calor y el sacrificio de un hombre de guerra. Mantente hidratado, mantén la disciplina.
+                        </div>
+                        <div class="producto-precio">$13.000</div>
+                        
+                        <div class="opciones-bebida">
+                            <label class="opciones-label">Tipo de Bebida:</label>
+                            <div class="opciones-grupo">
+                                <button class="opcion-btn activo" data-tipo="normal" onclick="cambiarTipo(this, 'maracuyada', 13000)">Normal</button>
+                                <button class="opcion-btn" data-tipo="granizado" onclick="cambiarTipo(this, 'maracuyada', 14000)">Granizado +$1K</button>
+                            </div>
+                        </div>
+
+                        <div class="cantidad-selector">
+                            <span class="cantidad-label">Cantidad:</span>
+                            <div class="cantidad-controls">
+                                <button class="cantidad-btn" onclick="cambiarCantidad('maracuyada', -1)">−</button>
+                                <input type="number" class="cantidad-input" id="cantidad-maracuyada" value="1" min="1" max="100">
+                                <button class="cantidad-btn" onclick="cambiarCantidad('maracuyada', 1)">+</button>
+                            </div>
+                        </div>
+
+                        <button class="btn-agregar" onclick="agregarAlCarrito('Maracuyada', 13000, 'maracuyada')">➤ Añadir a la Misión</button>
+                    </div>
+                </div>
+
+                <!-- LULADA -->
+                <div class="producto-card">
+                    <img src="images/lulada.jpg" alt="Lulada" class="producto-imagen">
+                    <div class="producto-info">
+                        <div class="producto-nombre">Lulada</div>
+                        <div class="producto-descripcion">
+                            Bebida energética de lulo que te mantiene en combate. Para los valientes que no se rinden. Fortaleza en cada sorbo.
+                        </div>
+                        <div class="producto-precio">$13.000</div>
+                        
+                        <div class="opciones-bebida">
+                            <label class="opciones-label">Tipo de Bebida:</label>
+                            <div class="opciones-grupo">
+                                <button class="opcion-btn activo" data-tipo="normal" onclick="cambiarTipo(this, 'lulada', 13000)">Normal</button>
+                                <button class="opcion-btn" data-tipo="granizado" onclick="cambiarTipo(this, 'lulada', 14000)">Granizado +$1K</button>
+                            </div>
+                        </div>
+
+                        <div class="cantidad-selector">
+                            <span class="cantidad-label">Cantidad:</span>
+                            <div class="cantidad-controls">
+                                <button class="cantidad-btn" onclick="cambiarCantidad('lulada', -1)">−</button>
+                                <input type="number" class="cantidad-input" id="cantidad-lulada" value="1" min="1" max="100">
+                                <button class="cantidad-btn" onclick="cambiarCantidad('lulada', 1)">+</button>
+                            </div>
+                        </div>
+
+                        <button class="btn-agregar" onclick="agregarAlCarrito('Lulada', 13000, 'lulada')">➤ Añadir a la Misión</button>
+                    </div>
+                </div>
+
+                <!-- MANGO BICHE -->
+                <div class="producto-card">
+                    <img src="images/mango-biche.jpg" alt="Mango Biche" class="producto-imagen">
+                    <div class="producto-info">
+                        <div class="producto-nombre">Mango Biche</div>
+                        <div class="producto-descripcion">
+                            Mango verde, bebida verde, corazón de acero. El drink del soldado que enfrenta cada misión con valor y honor.
+                        </div>
+                        <div class="producto-precio">$12.000</div>
+                        
+                        <div class="opciones-bebida">
+                            <label class="opciones-label">Tipo de Bebida:</label>
+                            <div class="opciones-grupo">
+                                <button class="opcion-btn activo" data-tipo="normal" onclick="cambiarTipo(this, 'mango', 12000)">Normal</button>
+                                <button class="opcion-btn" data-tipo="granizado" onclick="cambiarTipo(this, 'mango', 13000)">Granizado +$1K</button>
+                            </div>
+                        </div>
+
+                        <div class="cantidad-selector">
+                            <span class="cantidad-label">Cantidad:</span>
+                            <div class="cantidad-controls">
+                                <button class="cantidad-btn" onclick="cambiarCantidad('mango', -1)">−</button>
+                                <input type="number" class="cantidad-input" id="cantidad-mango" value="1" min="1" max="100">
+                                <button class="cantidad-btn" onclick="cambiarCantidad('mango', 1)">+</button>
+                            </div>
+                        </div>
+
+                        <button class="btn-agregar" onclick="agregarAlCarrito('Mango Biche', 12000, 'mango')">➤ Añadir a la Misión</button>
+                    </div>
+                </div>
+
+                <!-- LIMONADA -->
+                <div class="producto-card">
+                    <img src="images/limonada.jpg" alt="Limonada" class="producto-imagen">
+                    <div class="producto-info">
+                        <div class="producto-nombre">Limonada</div>
+                        <div class="producto-descripcion">
+                            Refrescante, pura, directa. Como un soldado en la batalla. Limonada natural para los que sirven con honor.
+                        </div>
+                        <div class="producto-precio">$6.000</div>
+                        
+                        <div class="opciones-bebida">
+                            <label class="opciones-label">Tipo de Bebida:</label>
+                            <div class="opciones-grupo">
+                                <button class="opcion-btn activo" data-tipo="normal" onclick="cambiarTipo(this, 'limonada', 6000)">Normal</button>
+                                <button class="opcion-btn" data-tipo="granizado" onclick="cambiarTipo(this, 'limonada', 7000)">Granizado +$1K</button>
+                            </div>
+                        </div>
+
+                        <div class="cantidad-selector">
+                            <span class="cantidad-label">Cantidad:</span>
+                            <div class="cantidad-controls">
+                                <button class="cantidad-btn" onclick="cambiarCantidad('limonada', -1)">−</button>
+                                <input type="number" class="cantidad-input" id="cantidad-limonada" value="1" min="1" max="100">
+                                <button class="cantidad-btn" onclick="cambiarCantidad('limonada', 1)">+</button>
+                            </div>
+                        </div>
+
+                        <button class="btn-agregar" onclick="agregarAlCarrito('Limonada', 6000, 'limonada')">➤ Añadir a la Misión</button>
+                    </div>
+                </div>
+
+                <!-- SALPICÓN CON HELADO -->
+                <div class="producto-card">
+                    <img src="images/salpicon.jpg" alt="Salpicón" class="producto-imagen">
+                    <div class="producto-info">
+                        <div class="producto-nombre">Salpicón con Helado</div>
+                        <div class="producto-descripcion">
+                            La recompensa del guerrero después de la batalla. Frutas, hielo y gloria en cada vaso. Descansa conquistador, te lo mereces.
+                        </div>
+                        <div class="producto-precio">$13.000</div>
+                        
+                        <div class="opciones-bebida">
+                            <label class="opciones-label">Tipo de Bebida:</label>
+                            <div class="opciones-grupo">
+                                <button class="opcion-btn activo" data-tipo="normal" onclick="cambiarTipo(this, 'salpicon', 13000)">Normal</button>
+                                <button class="opcion-btn" data-tipo="granizado" onclick="cambiarTipo(this, 'salpicon', 14000)">Extra Helado +$1K</button>
+                            </div>
+                        </div>
+
+                        <div class="cantidad-selector">
+                            <span class="cantidad-label">Cantidad:</span>
+                            <div class="cantidad-controls">
+                                <button class="cantidad-btn" onclick="cambiarCantidad('salpicon', -1)">−</button>
+                                <input type="number" class="cantidad-input" id="cantidad-salpicon" value="1" min="1" max="100">
+                                <button class="cantidad-btn" onclick="cambiarCantidad('salpicon', 1)">+</button>
+                            </div>
+                        </div>
+
+                        <button class="btn-agregar" onclick="agregarAlCarrito('Salpicón con Helado', 13000, 'salpicon')">➤ Añadir a la Misión</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MOTIVACIÓN 2 -->
+        <div class="motivacional">
+            "Tu hidratación es nuestra misión. Confía en nosotros para mantener tu cuerpo en combate."
+        </div>
+
+        <!-- FORMULARIO -->
+        <section class="formulario-section">
+            <div class="formulario-titulo">📋 Datos del Hombre de Guerra</div>
+            
+            <form id="formulario-orden">
+                <div class="form-grid">
+                    <div class="form-grupo">
+                        <label class="form-label">Nombre Completo (Soldado)</label>
+                        <input type="text" id="nombre" class="form-input" placeholder="Tu nombre de combate" required>
+                    </div>
+
+                    <div class="form-grupo">
+                        <label class="form-label">Teléfono de Contacto</label>
+                        <input type="tel" id="telefono" class="form-input" placeholder="Tu número de comunicación" required>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-grupo">
+                        <label class="form-label">Rango</label>
+                        <input type="text" id="rango" class="form-input" placeholder="ej. Soldado, Cabo, Sargento, Teniente, etc.">
+                    </div>
+
+                    <div class="form-grupo">
+                        <label class="form-label">Ubicación o Dependencia</label>
+                        <input type="text" id="ubicacion" class="form-input" placeholder="Ubicación o dependencia" required>
+                    </div>
+                </div>
+
+                <div class="form-grupo">
+                    <label class="form-label">Notas Especiales (Observaciones de Combate)</label>
+                    <input type="text" id="notas" class="form-input" placeholder="Instrucciones especiales para tu entrega">
+                </div>
+
+                <button type="submit" class="btn-whatsapp">📱 COMPLETAR MISIÓN VÍA WHATSAPP</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- CARRITO FLOTANTE -->
+    <div class="carrito-flotante vacio" id="carrito-flotante">
+        <div class="carrito-titulo">📦 Resumen de Operaciones</div>
+        <div class="carrito-count" id="carrito-cantidad">0</div>
+        <div class="carrito-items" id="carrito-items">
+            <div style="color: #5a3817; font-size: 11px;">Tu arsenal está vacío</div>
+        </div>
+        <div class="carrito-total">
+            Total: <span id="carrito-total-monto">$0</span>
+        </div>
+        <button class="btn-completar" onclick="document.getElementById('formulario-orden').scrollIntoView({behavior: 'smooth'})">⬇️ Ir al Formulario</button>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-title">⚔️ Escuela de Soldados Profesionales ⚔️</div>
+                <p>Nilo, Cundinamarca</p>
+                <p>Servimos con honor. Hidratación táctica para defensores.</p>
+                <div class="footer-eslogan">"La disciplina es la llave de la victoria"</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Variables globales
+        let carrito = [];
+        let preciosPorProducto = {
+            'maracuyada': { normal: 13000, granizado: 14000 },
+            'lulada': { normal: 13000, granizado: 14000 },
+            'mango': { normal: 12000, granizado: 13000 },
+            'limonada': { normal: 6000, granizado: 7000 },
+            'salpicon': { normal: 13000, granizado: 14000 }
+        };
+
+        let tiposPorProducto = {
+            'maracuyada': 'normal',
+            'lulada': 'normal',
+            'mango': 'normal',
+            'limonada': 'normal',
+            'salpicon': 'normal'
+        };
+
+        // Cambiar tipo de bebida
+        function cambiarTipo(btn, producto, nuevoPrecio) {
+            const parent = btn.parentElement;
+            parent.querySelectorAll('.opcion-btn').forEach(b => b.classList.remove('activo'));
+            btn.classList.add('activo');
+
+            const tipo = btn.dataset.tipo;
+            tiposPorProducto[producto] = tipo;
+
+            // Actualizar el precio mostrado
+            const card = btn.closest('.producto-card');
+            card.querySelector('.producto-precio').textContent = '$' + nuevoPrecio.toLocaleString('es-CO');
+        }
+
+        // Cambiar cantidad
+        function cambiarCantidad(producto, cambio) {
+            const input = document.getElementById(`cantidad-${producto}`);
+            let nueva = parseInt(input.value) + cambio;
+            if (nueva >= 1 && nueva <= 100) {
+                input.value = nueva;
+            }
+        }
+
+        // Agregar al carrito
+        function agregarAlCarrito(nombre, precioBase, idProducto) {
+            const cantidad = parseInt(document.getElementById(`cantidad-${idProducto}`).value);
+            const tipo = tiposPorProducto[idProducto];
+            
+            // Obtener el precio según el tipo
+            const precio = preciosPorProducto[idProducto][tipo];
+            
+            const item = {
+                nombre: nombre,
+                tipo: tipo,
+                cantidad: cantidad,
+                precioUnitario: precio,
+                precioTotal: precio * cantidad,
+                id: idProducto + '-' + tipo + '-' + Date.now()
+            };
+
+            carrito.push(item);
+            actualizarCarrito();
+            mostrarAlerta(`✓ ${nombre} (${tipo.toUpperCase()}) añadido a la misión`);
+        }
+
+        // Actualizar carrito
+        function actualizarCarrito() {
+            const carritoElement = document.getElementById('carrito-flotante');
+            const cantidadElement = document.getElementById('carrito-cantidad');
+            const itemsElement = document.getElementById('carrito-items');
+            const totalElement = document.getElementById('carrito-total-monto');
+
+            if (carrito.length === 0) {
+                carritoElement.classList.add('vacio');
+                return;
+            }
+
+            carritoElement.classList.remove('vacio');
+
+            // Contar items totales
+            let totalItems = 0;
+            let totalPrecio = 0;
+
+            let itemsHTML = '';
+            carrito.forEach((item, index) => {
+                totalItems += item.cantidad;
+                totalPrecio += item.precioTotal;
+                
+                let tipoLabel = item.tipo === 'normal' ? '(Normal)' : item.nombre.includes('Salpicón') ? '(Extra Helado)' : '(Granizado)';
+                itemsHTML += `
+                    <div class="carrito-item">
+                        <div class="carrito-item-nombre">${item.nombre} ${tipoLabel}</div>
+                        <div class="carrito-item-cantidad">x${item.cantidad} = $${item.precioTotal.toLocaleString('es-CO')}</div>
+                        <button onclick="eliminarDelCarrito(${index})" style="background: none; border: none; color: #6b7280; cursor: pointer; font-size: 10px;">Eliminar</button>
+                    </div>
+                `;
+            });
+
+            cantidadElement.textContent = totalItems;
+            itemsElement.innerHTML = itemsHTML;
+            totalElement.textContent = '$' + totalPrecio.toLocaleString('es-CO');
+        }
+
+        // Eliminar del carrito
+        function eliminarDelCarrito(index) {
+            carrito.splice(index, 1);
+            actualizarCarrito();
+        }
+
+        // Mostrar alerta
+        function mostrarAlerta(mensaje) {
+            const alerta = document.createElement('div');
+            alerta.className = 'alerta';
+            alerta.textContent = mensaje;
+            document.body.appendChild(alerta);
+
+            setTimeout(() => {
+                alerta.remove();
+            }, 3000);
+        }
+
+        // Manejar envío del formulario
+        document.getElementById('formulario-orden').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            if (carrito.length === 0) {
+                mostrarAlerta('❌ ERROR: Añade productos a tu misión antes de continuar');
+                return;
+            }
+
+            const nombre = document.getElementById('nombre').value.trim();
+            const telefono = document.getElementById('telefono').value.trim();
+            const rango = document.getElementById('rango').value.trim();
+            const ubicacion = document.getElementById('ubicacion').value.trim();
+            const notas = document.getElementById('notas').value.trim();
+
+            if (!nombre || !telefono || !ubicacion) {
+                mostrarAlerta('❌ ERROR: Completa todos los campos obligatorios');
+                return;
+            }
+
+            // Construir mensaje WhatsApp
+            let mensaje = `🎖️ *ORDEN DE HIDRATACIÓN TÁCTICA* 🎖️\n\n`;
+            mensaje += `👤 *SOLDADO:* ${nombre}\n`;
+            if (rango) {
+                mensaje += `🎖️ *RANGO:* ${rango}\n`;
+            }
+            mensaje += `📍 *UBICACIÓN:* ${ubicacion}\n`;
+            mensaje += `☎️ *CONTACTO:* ${telefono}\n`;
+            mensaje += `\n*═══════════════════════════*\n`;
+            mensaje += `*ARMAMENTO REFRESCANTE:*\n`;
+            mensaje += `*═══════════════════════════*\n\n`;
+
+            let totalPrecio = 0;
+            carrito.forEach(item => {
+                let tipoLabel = item.tipo === 'normal' ? 'Normal' : item.nombre.includes('Salpicón') ? 'Extra Helado' : 'Granizado';
+                mensaje += `✓ ${item.nombre} (${tipoLabel})\n`;
+                mensaje += `   Cantidad: ${item.cantidad}x\n`;
+                mensaje += `   Precio: $${item.precioTotal.toLocaleString('es-CO')}\n\n`;
+                totalPrecio += item.precioTotal;
+            });
+
+            mensaje += `*═══════════════════════════*\n`;
+            mensaje += `💰 *TOTAL A PAGAR:* $${totalPrecio.toLocaleString('es-CO')}\n`;
+            mensaje += `*═══════════════════════════*\n\n`;
+            mensaje += `💳 *FORMA DE PAGO:* Efectivo al recibir\n`;
+
+            if (notas) {
+                mensaje += `📝 *NOTAS:* ${notas}\n`;
+            }
+
+            mensaje += `\n🎯 *¡Hidratación Táctica Confirmada!* 🎯`;
+
+            // Enviar a WhatsApp
+            const numeroWhatsApp = '573025269081';
+            const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+            window.open(urlWhatsApp, '_blank');
+
+            mostrarAlerta('✓ Misión enviada a WhatsApp');
+        });
+
+        // Inicializar
+        actualizarCarrito();
+    </script>
+</body>
+</html>
