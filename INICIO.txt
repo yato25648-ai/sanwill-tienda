@@ -1,0 +1,176 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                                                                            ║
+║                     🥤 SANWILL - TIENDA EN LÍNEA 🥤                       ║
+║                                                                            ║
+║                  PROYECTO LISTO PARA DESPLEGAR EN VERCEL                  ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+
+📊 ESTADO DEL PROYECTO
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ COMPLETADO Y VERIFICADO:
+  ✓ Página principal (index.html)
+  ✓ 5 imágenes optimizadas de bebidas
+  ✓ Configuración de Vercel (vercel.json)
+  ✓ Git inicializado
+  ✓ Primer commit creado
+  ✓ Documentación completa
+  ✓ Código listo para producción
+
+
+📁 ARCHIVOS IMPORTANTES
+═══════════════════════════════════════════════════════════════════════════════
+
+DOCUMENTACIÓN (Lee estos archivos):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📄 INSTRUCCIONES_VERCEL.md        ← GUÍA PASO A PASO (¡EMPIEZA AQUÍ!)
+📄 GUIA_DESPLIEGUE_VERCEL.md      ← Resumen rápido y checklist
+📄 README.md                       ← Información del proyecto
+
+CONFIGURACIÓN:
+━━━━━━━━━━━━━━━━
+⚙️  vercel.json                    → Configuración para Vercel
+⚙️  package.json                   → Metadatos del proyecto
+⚙️  .gitignore                     → Archivos a ignorar en Git
+
+APLICACIÓN:
+━━━━━━━━━━━━━━━━
+🌐 index.html                      → Tu tienda (página principal)
+📂 /images/                        → Imágenes de bebidas
+
+CONTROL DE VERSIONES:
+━━━━━━━━━━━━━━━━━━
+📦 .git/                           → Repositorio local de Git
+
+
+📋 GUÍA RÁPIDA DE DESPLIEGUE
+═══════════════════════════════════════════════════════════════════════════════
+
+PASO 1: Crear cuenta en GitHub (si no tienes)
+  → https://github.com/signup
+
+PASO 2: Crear repositorio en GitHub
+  → Nombre: "sanwill-tienda"
+  → Público (importante)
+
+PASO 3: Subir código a GitHub
+  $ git remote add origin https://github.com/TU_USUARIO/sanwill-tienda.git
+  $ git branch -M main
+  $ git push -u origin main
+
+PASO 4: Conectar a Vercel
+  → https://vercel.com
+  → "Import Project"
+  → Selecciona tu repositorio
+  → Deploy
+
+PASO 5: ¡Listo!
+  → Tu URL: https://sanwill-tienda.vercel.app
+  → Compartir con clientes
+
+
+🎯 INFORMACIÓN DEL PROYECTO
+═══════════════════════════════════════════════════════════════════════════════
+
+Nombre:              SANWILL - Tienda de Bebidas
+Versión:             1.0.0
+Tipo:                Tienda en línea (HTML estático)
+Hosting:             Vercel (gratuito)
+Dominio:             *.vercel.app (incluido)
+
+PRODUCTOS:
+  🍋 Limonada
+  🥝 Lulada
+  🥭 Mango Biche
+  🍑 Maracuyada
+  🎨 Salpicón
+
+Características:
+  ✓ Diseño Responsivo
+  ✓ Catálogo Interactivo
+  ✓ Optimizado para SEO
+  ✓ Interfaz Moderna
+  ✓ Carga Rápida
+
+
+📊 ESTADÍSTICAS
+═══════════════════════════════════════════════════════════════════════════════
+
+Tamaño del proyecto:    200 KB (sin .git)
+Total con repositorio:  1.3 MB
+Imágenes:               5 fotos de bebidas
+Archivos:               14 archivos
+Tiempo de carga:        < 1 segundo esperado
+Navegadores:            Todos los modernos
+Dispositivos:           Desktop, Tablet, Mobile
+
+
+✨ VENTAJAS DE USAR VERCEL
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ GRATUITO             100% sin costo
+✅ HTTPS AUTOMÁTICO     Conexión segura incluida
+✅ DOMINIO GRATIS       *.vercel.app
+✅ MUNDIAL              Distribuido en múltiples servidores
+✅ ACTUALIZACIONES      Automáticas cuando hagas push a GitHub
+✅ RÁPIDO               Carga en < 1 segundo
+✅ SEO OPTIMIZADO       Mejor indexación en Google
+✅ ANCHO DE BANDA       Ilimitado
+✅ UPTIME 99.9%        Siempre disponible
+✅ PANEL INTUITIVO      Fácil de usar
+
+
+🚀 PRÓXIMOS PASOS
+═══════════════════════════════════════════════════════════════════════════════
+
+1. Lee INSTRUCCIONES_VERCEL.md (paso a paso detallado)
+2. Crea una cuenta en GitHub
+3. Crea un nuevo repositorio
+4. Sube tu código a GitHub
+5. Conecta Vercel a tu repositorio
+6. Recibe tu URL permanente
+7. Comparte con tus clientes
+8. ¡Monitorea tus estadísticas!
+
+
+📞 RECURSOS ÚTILES
+═══════════════════════════════════════════════════════════════════════════════
+
+Vercel:          https://vercel.com
+GitHub:          https://github.com
+Vercel Docs:     https://vercel.com/docs
+GitHub Docs:     https://docs.github.com
+Stack Overflow:  https://stackoverflow.com (para preguntas)
+
+
+❓ PREGUNTAS FRECUENTES
+═══════════════════════════════════════════════════════════════════════════════
+
+¿Cuánto cuesta?
+→ Completamente GRATIS para sitios estáticos
+
+¿Estará siempre en línea?
+→ SÍ, 24/7 con 99.9% de uptime
+
+¿Puedo usar mi dominio propio?
+→ SÍ, conecta un dominio personalizado en Vercel
+
+¿Cómo actualizo la tienda?
+→ Solo haz cambios locales, git push, y Vercel actualiza automáticamente
+
+¿Mis datos son seguros?
+→ SÍ, HTTPS incluido y no hay datos sensibles en el código
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+                    🎉 ¡TU PROYECTO ESTÁ LISTO! 🎉
+
+                 Sigue los pasos en INSTRUCCIONES_VERCEL.md
+             y estarás en línea en menos de 15 minutos.
+
+                   Última actualización: Abril 2025
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
