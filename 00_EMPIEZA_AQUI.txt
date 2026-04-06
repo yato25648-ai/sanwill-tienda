@@ -1,0 +1,126 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                                                                            ║
+║                   🚀 EMPIEZA AQUÍ - DESPLIEGUE EN VERCEL 🚀               ║
+║                                                                            ║
+║                          Tienda SANWILL - Bebidas                         ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                          ✅ TU PROYECTO ESTÁ LISTO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Tu tienda SANWILL está 100% preparada para desplegar en Vercel.
+
+No necesitas cambiar NADA del código.
+
+Solo sigue 5 simples pasos y estarás en línea en 15 minutos.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                          📚 LEE ESTOS DOCUMENTOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PRIMERO:  📖 INSTRUCCIONES_VERCEL.md
+          (Guía PASO A PASO con todas las capturas e instrucciones)
+
+SEGUNDO:  ⚡ GUIA_DESPLIEGUE_VERCEL.md
+          (Resumen rápido si ya sabes de GitHub y Vercel)
+
+REFERENCIA: 📋 RESUMEN_FINAL.txt
+            (Información completa del proyecto)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                          🎯 5 PASOS PARA DESPLEGAR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PASO 1: Crear Cuenta en GitHub
+└─ Abre: https://github.com/signup
+└─ Tiempo: 3 minutos
+
+PASO 2: Crear Repositorio
+└─ Nombre: sanwill-tienda
+└─ Tipo: Public
+└─ Tiempo: 2 minutos
+
+PASO 3: Subir Código a GitHub
+└─ Usa los comandos de git que están en INSTRUCCIONES_VERCEL.md
+└─ Tiempo: 3 minutos
+
+PASO 4: Conectar a Vercel
+└─ Abre: https://vercel.com
+└─ Importa tu repositorio de GitHub
+└─ Tiempo: 2 minutos
+
+PASO 5: ¡Listo!
+└─ Tu URL: https://sanwill-tienda.vercel.app
+└─ Comparte con tus clientes
+└─ Tiempo: 1 minuto
+
+TOTAL: ~13 minutos ⏱️
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                          🔗 ENLACES IMPORTANTES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+GitHub:     https://github.com
+Vercel:     https://vercel.com
+Documentación: LEE INSTRUCCIONES_VERCEL.md
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                          ❓ ¿PREGUNTAS FRECUENTES?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+¿Cuánto cuesta?
+→ GRATIS. Vercel no cobra por sitios HTML estáticos.
+
+¿Necesito cambiar algo del código?
+→ NO. Tu código está perfecto. Solo súbelo.
+
+¿Cuánto tiempo toma?
+→ ~15 minutos de inicio a fin.
+
+¿Mi sitio estará siempre en línea?
+→ SÍ. 24/7 con 99.9% de disponibilidad.
+
+¿Puedo cambiar cosas después?
+→ SÍ. Cualquier cambio en GitHub se actualiza automáticamente en Vercel.
+
+¿Es complicado?
+→ NO. La guía está diseñada para cualquiera, aunque no sepa de programación.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                          ✨ ESTO INCLUYE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ HTML optimizado
+✅ 5 imágenes de bebidas (Limonada, Lulada, Mango Biche, Maracuyada, Salpicón)
+✅ Diseño responsivo
+✅ Configuración de Vercel
+✅ Documentación completa
+✅ Git inicializado
+✅ Primer commit creado
+✅ Listo para producción
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                          🚀 PRÓXIMO PASO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⬇️ ABRE AHORA:
+
+   📖 INSTRUCCIONES_VERCEL.md
+
+Y sigue la guía paso a paso.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+                    ¡Tu tienda estará en línea en 15 minutos! 🎉
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
