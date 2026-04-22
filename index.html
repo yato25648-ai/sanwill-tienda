@@ -183,9 +183,8 @@
         .producto-imagen {
             width: 100%;
             height: 220px;
-            object-fit: contain;
+            object-fit: cover;
             background: #070b14;
-            padding: 18px;
             border-bottom: 2px solid rgba(168, 85, 247, 0.45);
         }
 
@@ -218,48 +217,6 @@
             text-shadow: 0 0 12px rgba(168, 85, 247, 0.28);
         }
 
-        .opciones-bebida {
-            margin-bottom: 12px;
-        }
-
-        .opciones-label {
-            font-size: 12px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            margin-bottom: 6px;
-            display: block;
-            font-weight: bold;
-        }
-
-        .opciones-grupo {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 12px;
-        }
-
-        .opcion-btn {
-            flex: 1;
-            padding: 8px 12px;
-            border: 2px solid var(--accent-primary);
-            background: transparent;
-            color: var(--accent-primary);
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 4px;
-            font-size: 12px;
-            transition: all 0.2s;
-            text-transform: uppercase;
-        }
-
-        .opcion-btn.activo {
-            background: var(--accent-primary);
-            color: #031621;
-        }
-
-        .opcion-btn:hover {
-            background: var(--accent-primary);
-            color: #031621;
-        }
 
         .cantidad-selector {
             display: flex;
@@ -608,7 +565,7 @@
         <div class="container">
             <div class="header-content">
                 <h1>✨ tuplataforma ✨</h1>
-                <div class="eslogan">Tus plataformas premium en un solo lugar</div>
+                <div class="eslogan">Tus plataformas favoritas en un solo lugar</div>
                 <div class="motto">Entretenimiento digital al instante, precios inteligentes en COP</div>
             </div>
         </div>
@@ -620,259 +577,13 @@
         </div>
 
         <section class="productos-section">
-            <div class="section-title">Catálogo de Plataformas</div>
+            <div class="section-title">Catálogo de Plataformas (precio único)</div>
+            <div class="productos-grid" id="grid-individuales"></div>
+        </section>
 
-            <div class="productos-grid">
-                <div class="producto-card">
-                    <img src="images/netflix.svg" alt="Netflix" class="producto-imagen">
-                    <div class="producto-info">
-                        <div class="producto-nombre">Netflix Premium</div>
-                        <div class="producto-descripcion">Series, películas y estrenos semanales en HD/4K. Ideal para maratones sin pausas.</div>
-                        <div class="producto-precio">$19.500</div>
-                        <div class="opciones-bebida">
-                            <label class="opciones-label">Plan:</label>
-                            <div class="opciones-grupo">
-                                <button class="opcion-btn activo" data-tipo="basico" onclick="cambiarTipo(this, 'netflix', 19500)">Básico</button>
-                                <button class="opcion-btn" data-tipo="premium" onclick="cambiarTipo(this, 'netflix', 21000)">Premium</button>
-                            </div>
-                        </div>
-                        <div class="cantidad-selector">
-                            <span class="cantidad-label">Cantidad:</span>
-                            <div class="cantidad-controls">
-                                <button class="cantidad-btn" onclick="cambiarCantidad('netflix', -1)">−</button>
-                                <input type="number" class="cantidad-input" id="cantidad-netflix" value="1" min="1" max="100">
-                                <button class="cantidad-btn" onclick="cambiarCantidad('netflix', 1)">+</button>
-                            </div>
-                        </div>
-                        <button class="btn-agregar" onclick="agregarAlCarrito('Netflix Premium', 19500, 'netflix')">➤ Añadir al carrito</button>
-                    </div>
-                </div>
-
-                <div class="producto-card">
-                    <img src="images/disney.svg" alt="Disney+" class="producto-imagen">
-                    <div class="producto-info">
-                        <div class="producto-nombre">Disney+</div>
-                        <div class="producto-descripcion">Catálogo Disney, Pixar, Marvel, Star Wars y National Geographic para toda la familia.</div>
-                        <div class="producto-precio">$6.900</div>
-                        <div class="opciones-bebida">
-                            <label class="opciones-label">Plan:</label>
-                            <div class="opciones-grupo">
-                                <button class="opcion-btn activo" data-tipo="basico" onclick="cambiarTipo(this, 'disney', 6900)">Básico</button>
-                                <button class="opcion-btn" data-tipo="premium" onclick="cambiarTipo(this, 'disney', 7900)">Premium</button>
-                            </div>
-                        </div>
-                        <div class="cantidad-selector">
-                            <span class="cantidad-label">Cantidad:</span>
-                            <div class="cantidad-controls">
-                                <button class="cantidad-btn" onclick="cambiarCantidad('disney', -1)">−</button>
-                                <input type="number" class="cantidad-input" id="cantidad-disney" value="1" min="1" max="100">
-                                <button class="cantidad-btn" onclick="cambiarCantidad('disney', 1)">+</button>
-                            </div>
-                        </div>
-                        <button class="btn-agregar" onclick="agregarAlCarrito('Disney+', 6900, 'disney')">➤ Añadir al carrito</button>
-                    </div>
-                </div>
-
-                <div class="producto-card">
-                    <img src="images/hbo.svg" alt="HBO Max" class="producto-imagen">
-                    <div class="producto-info">
-                        <div class="producto-nombre">HBO Max</div>
-                        <div class="producto-descripcion">Producciones originales, estrenos de Warner y series top con calidad premium.</div>
-                        <div class="producto-precio">$6.500</div>
-                        <div class="opciones-bebida">
-                            <label class="opciones-label">Plan:</label>
-                            <div class="opciones-grupo">
-                                <button class="opcion-btn activo" data-tipo="basico" onclick="cambiarTipo(this, 'hbo', 6500)">Básico</button>
-                                <button class="opcion-btn" data-tipo="premium" onclick="cambiarTipo(this, 'hbo', 9500)">Premium</button>
-                            </div>
-                        </div>
-                        <div class="cantidad-selector">
-                            <span class="cantidad-label">Cantidad:</span>
-                            <div class="cantidad-controls">
-                                <button class="cantidad-btn" onclick="cambiarCantidad('hbo', -1)">−</button>
-                                <input type="number" class="cantidad-input" id="cantidad-hbo" value="1" min="1" max="100">
-                                <button class="cantidad-btn" onclick="cambiarCantidad('hbo', 1)">+</button>
-                            </div>
-                        </div>
-                        <button class="btn-agregar" onclick="agregarAlCarrito('HBO Max', 6500, 'hbo')">➤ Añadir al carrito</button>
-                    </div>
-                </div>
-
-                <div class="producto-card">
-                    <img src="images/spotify.svg" alt="Spotify Premium" class="producto-imagen">
-                    <div class="producto-info">
-                        <div class="producto-nombre">Spotify Premium</div>
-                        <div class="producto-descripcion">Música sin anuncios, descargas y audio de alta calidad para cualquier momento.</div>
-                        <div class="producto-precio">$9.500</div>
-                        <div class="opciones-bebida">
-                            <label class="opciones-label">Plan:</label>
-                            <div class="opciones-grupo">
-                                <button class="opcion-btn activo" data-tipo="basico" onclick="cambiarTipo(this, 'spotify', 9500)">Básico</button>
-                                <button class="opcion-btn" data-tipo="premium" onclick="cambiarTipo(this, 'spotify', 10900)">Premium</button>
-                            </div>
-                        </div>
-                        <div class="cantidad-selector">
-                            <span class="cantidad-label">Cantidad:</span>
-                            <div class="cantidad-controls">
-                                <button class="cantidad-btn" onclick="cambiarCantidad('spotify', -1)">−</button>
-                                <input type="number" class="cantidad-input" id="cantidad-spotify" value="1" min="1" max="100">
-                                <button class="cantidad-btn" onclick="cambiarCantidad('spotify', 1)">+</button>
-                            </div>
-                        </div>
-                        <button class="btn-agregar" onclick="agregarAlCarrito('Spotify Premium', 9500, 'spotify')">➤ Añadir al carrito</button>
-                    </div>
-                </div>
-
-                <div class="producto-card">
-                    <img src="images/crunchyroll.svg" alt="Crunchyroll" class="producto-imagen">
-                    <div class="producto-info">
-                        <div class="producto-nombre">Crunchyroll</div>
-                        <div class="producto-descripcion">Anime subtitulado y doblado, simulcast y biblioteca premium para fans otaku.</div>
-                        <div class="producto-precio">$12.900</div>
-                        <div class="opciones-bebida">
-                            <label class="opciones-label">Plan:</label>
-                            <div class="opciones-grupo">
-                                <button class="opcion-btn activo" data-tipo="basico" onclick="cambiarTipo(this, 'crunchyroll', 12900)">Básico</button>
-                                <button class="opcion-btn" data-tipo="premium" onclick="cambiarTipo(this, 'crunchyroll', 15900)">Premium</button>
-                            </div>
-                        </div>
-                        <div class="cantidad-selector">
-                            <span class="cantidad-label">Cantidad:</span>
-                            <div class="cantidad-controls">
-                                <button class="cantidad-btn" onclick="cambiarCantidad('crunchyroll', -1)">−</button>
-                                <input type="number" class="cantidad-input" id="cantidad-crunchyroll" value="1" min="1" max="100">
-                                <button class="cantidad-btn" onclick="cambiarCantidad('crunchyroll', 1)">+</button>
-                            </div>
-                        </div>
-                        <button class="btn-agregar" onclick="agregarAlCarrito('Crunchyroll', 12900, 'crunchyroll')">➤ Añadir al carrito</button>
-                    </div>
-                </div>
-
-                <div class="producto-card">
-                    <img src="images/youtube.svg" alt="YouTube Premium" class="producto-imagen">
-                    <div class="producto-info">
-                        <div class="producto-nombre">YouTube Premium</div>
-                        <div class="producto-descripcion">Videos sin anuncios, reproducción en segundo plano y acceso a YouTube Music.</div>
-                        <div class="producto-precio">$11.500</div>
-                        <div class="opciones-bebida">
-                            <label class="opciones-label">Plan:</label>
-                            <div class="opciones-grupo">
-                                <button class="opcion-btn activo" data-tipo="basico" onclick="cambiarTipo(this, 'youtube', 11500)">Básico</button>
-                                <button class="opcion-btn" data-tipo="premium" onclick="cambiarTipo(this, 'youtube', 13500)">Premium</button>
-                            </div>
-                        </div>
-                        <div class="cantidad-selector">
-                            <span class="cantidad-label">Cantidad:</span>
-                            <div class="cantidad-controls">
-                                <button class="cantidad-btn" onclick="cambiarCantidad('youtube', -1)">−</button>
-                                <input type="number" class="cantidad-input" id="cantidad-youtube" value="1" min="1" max="100">
-                                <button class="cantidad-btn" onclick="cambiarCantidad('youtube', 1)">+</button>
-                            </div>
-                        </div>
-                        <button class="btn-agregar" onclick="agregarAlCarrito('YouTube Premium', 11500, 'youtube')">➤ Añadir al carrito</button>
-                    </div>
-                </div>
-
-                <div class="producto-card">
-                    <img src="images/universal.svg" alt="Universal+" class="producto-imagen">
-                    <div class="producto-info">
-                        <div class="producto-nombre">Universal+</div>
-                        <div class="producto-descripcion">Series y películas internacionales con señal premium y contenido exclusivo.</div>
-                        <div class="producto-precio">$8.900</div>
-                        <div class="opciones-bebida">
-                            <label class="opciones-label">Plan:</label>
-                            <div class="opciones-grupo">
-                                <button class="opcion-btn activo" data-tipo="basico" onclick="cambiarTipo(this, 'universal', 8900)">Básico</button>
-                                <button class="opcion-btn" data-tipo="premium" onclick="cambiarTipo(this, 'universal', 10900)">Premium</button>
-                            </div>
-                        </div>
-                        <div class="cantidad-selector">
-                            <span class="cantidad-label">Cantidad:</span>
-                            <div class="cantidad-controls">
-                                <button class="cantidad-btn" onclick="cambiarCantidad('universal', -1)">−</button>
-                                <input type="number" class="cantidad-input" id="cantidad-universal" value="1" min="1" max="100">
-                                <button class="cantidad-btn" onclick="cambiarCantidad('universal', 1)">+</button>
-                            </div>
-                        </div>
-                        <button class="btn-agregar" onclick="agregarAlCarrito('Universal+', 8900, 'universal')">➤ Añadir al carrito</button>
-                    </div>
-                </div>
-
-                <div class="producto-card">
-                    <img src="images/combo-duo.svg" alt="Combo Duo" class="producto-imagen">
-                    <div class="producto-info">
-                        <div class="producto-nombre">Combo 2 Plataformas</div>
-                        <div class="producto-descripcion">Arma tu dúo ganador (ej: Disney+ + HBO Max o Spotify + YouTube Premium).</div>
-                        <div class="producto-precio">$18.900</div>
-                        <div class="opciones-bebida">
-                            <label class="opciones-label">Plan:</label>
-                            <div class="opciones-grupo">
-                                <button class="opcion-btn activo" data-tipo="basico" onclick="cambiarTipo(this, 'combo-duo', 18900)">Duo Smart</button>
-                                <button class="opcion-btn" data-tipo="premium" onclick="cambiarTipo(this, 'combo-duo', 22900)">Duo Plus</button>
-                            </div>
-                        </div>
-                        <div class="cantidad-selector">
-                            <span class="cantidad-label">Cantidad:</span>
-                            <div class="cantidad-controls">
-                                <button class="cantidad-btn" onclick="cambiarCantidad('combo-duo', -1)">−</button>
-                                <input type="number" class="cantidad-input" id="cantidad-combo-duo" value="1" min="1" max="100">
-                                <button class="cantidad-btn" onclick="cambiarCantidad('combo-duo', 1)">+</button>
-                            </div>
-                        </div>
-                        <button class="btn-agregar" onclick="agregarAlCarrito('Combo 2 Plataformas', 18900, 'combo-duo')">➤ Añadir al carrito</button>
-                    </div>
-                </div>
-
-                <div class="producto-card">
-                    <img src="images/combo-trio.svg" alt="Combo Trio" class="producto-imagen">
-                    <div class="producto-info">
-                        <div class="producto-nombre">Combo 3 Plataformas</div>
-                        <div class="producto-descripcion">Disfruta más contenido combinando 3 plataformas populares en una sola compra.</div>
-                        <div class="producto-precio">$27.900</div>
-                        <div class="opciones-bebida">
-                            <label class="opciones-label">Plan:</label>
-                            <div class="opciones-grupo">
-                                <button class="opcion-btn activo" data-tipo="basico" onclick="cambiarTipo(this, 'combo-trio', 27900)">Trio Smart</button>
-                                <button class="opcion-btn" data-tipo="premium" onclick="cambiarTipo(this, 'combo-trio', 31900)">Trio Plus</button>
-                            </div>
-                        </div>
-                        <div class="cantidad-selector">
-                            <span class="cantidad-label">Cantidad:</span>
-                            <div class="cantidad-controls">
-                                <button class="cantidad-btn" onclick="cambiarCantidad('combo-trio', -1)">−</button>
-                                <input type="number" class="cantidad-input" id="cantidad-combo-trio" value="1" min="1" max="100">
-                                <button class="cantidad-btn" onclick="cambiarCantidad('combo-trio', 1)">+</button>
-                            </div>
-                        </div>
-                        <button class="btn-agregar" onclick="agregarAlCarrito('Combo 3 Plataformas', 27900, 'combo-trio')">➤ Añadir al carrito</button>
-                    </div>
-                </div>
-
-                <div class="producto-card">
-                    <img src="images/combo-full.svg" alt="Combo Full" class="producto-imagen">
-                    <div class="producto-info">
-                        <div class="producto-nombre">Combo 4+ Plataformas</div>
-                        <div class="producto-descripcion">Paquete completo para hogares intensivos: más entretenimiento, mejor ahorro mensual.</div>
-                        <div class="producto-precio">$35.900</div>
-                        <div class="opciones-bebida">
-                            <label class="opciones-label">Plan:</label>
-                            <div class="opciones-grupo">
-                                <button class="opcion-btn activo" data-tipo="basico" onclick="cambiarTipo(this, 'combo-full', 35900)">Full Smart</button>
-                                <button class="opcion-btn" data-tipo="premium" onclick="cambiarTipo(this, 'combo-full', 39900)">Full Ultra</button>
-                            </div>
-                        </div>
-                        <div class="cantidad-selector">
-                            <span class="cantidad-label">Cantidad:</span>
-                            <div class="cantidad-controls">
-                                <button class="cantidad-btn" onclick="cambiarCantidad('combo-full', -1)">−</button>
-                                <input type="number" class="cantidad-input" id="cantidad-combo-full" value="1" min="1" max="100">
-                                <button class="cantidad-btn" onclick="cambiarCantidad('combo-full', 1)">+</button>
-                            </div>
-                        </div>
-                        <button class="btn-agregar" onclick="agregarAlCarrito('Combo 4+ Plataformas', 35900, 'combo-full')">➤ Añadir al carrito</button>
-                    </div>
-                </div>
-            </div>
+        <section class="productos-section">
+            <div class="section-title">Combos Inteligentes · 1 pantalla por app</div>
+            <div class="productos-grid" id="grid-combos"></div>
         </section>
 
         <div class="motivacional">
@@ -935,76 +646,208 @@
                 <div class="footer-title">🎬 tuplataforma</div>
                 <p>Venta digital de cuentas y combos de streaming</p>
                 <p>Soporte rápido • Activación ágil • Atención por WhatsApp</p>
-                <div class="footer-eslogan">"Tu entretenimiento premium, a precios lógicos"</div>
+                <div class="footer-eslogan">"Tu entretenimiento favorito, a precios lógicos"</div>
             </div>
         </div>
     </footer>
 
     <script>
         let carrito = [];
-        let preciosPorProducto = {
-            'netflix': { basico: 19500, premium: 21000 },
-            'disney': { basico: 6900, premium: 7900 },
-            'hbo': { basico: 6500, premium: 9500 },
-            'spotify': { basico: 9500, premium: 10900 },
-            'crunchyroll': { basico: 12900, premium: 15900 },
-            'youtube': { basico: 11500, premium: 13500 },
-            'universal': { basico: 8900, premium: 10900 },
-            'combo-duo': { basico: 18900, premium: 22900 },
-            'combo-trio': { basico: 27900, premium: 31900 },
-            'combo-full': { basico: 35900, premium: 39900 }
-        };
 
-        let tiposPorProducto = {
-            'netflix': 'basico',
-            'disney': 'basico',
-            'hbo': 'basico',
-            'spotify': 'basico',
-            'crunchyroll': 'basico',
-            'youtube': 'basico',
-            'universal': 'basico',
-            'combo-duo': 'basico',
-            'combo-trio': 'basico',
-            'combo-full': 'basico'
-        };
+        const catalogoIndividual = [
+            {
+                id: 'netflix',
+                nombre: 'Netflix',
+                descripcion: 'Acceso estable y activación rápida para maratones de series y películas.',
+                precio: 12000,
+                imagen: 'images/netflix.svg'
+            },
+            {
+                id: 'disney-completa',
+                nombre: 'Disney Completa Estándar',
+                descripcion: 'Cuenta completa con catálogo Disney, Marvel, Pixar y Star Wars.',
+                precio: 10000,
+                imagen: 'images/disney.svg'
+            },
+            {
+                id: 'disney-pantalla',
+                nombre: 'Disney Pantalla Estándar',
+                descripcion: 'Modalidad 1 pantalla para disfrutar contenido Disney a precio smart.',
+                precio: 4000,
+                imagen: 'images/disney.svg'
+            },
+            {
+                id: 'hbo-completa',
+                nombre: 'HBO Completa',
+                descripcion: 'Series top y estrenos de HBO/Max en una cuenta completa.',
+                precio: 9000,
+                imagen: 'images/hbo.svg'
+            },
+            {
+                id: 'hbo-pantalla',
+                nombre: 'HBO Pantalla',
+                descripcion: 'Plan 1 pantalla para disfrutar HBO con costo optimizado.',
+                precio: 4000,
+                imagen: 'images/hbo.svg'
+            },
+            {
+                id: 'spotify',
+                nombre: 'Spotify',
+                descripcion: 'Música sin anuncios y con mejor calidad para todos los días.',
+                precio: 10000,
+                imagen: 'images/spotify.svg'
+            },
+            {
+                id: 'spotify-3m',
+                nombre: 'Spotify 3 Meses',
+                descripcion: 'Pack trimestral para ahorrar tiempo y asegurar continuidad.',
+                precio: 20000,
+                imagen: 'images/spotify.svg'
+            },
+            {
+                id: 'crunchyroll-completa',
+                nombre: 'Crunchyroll Completo',
+                descripcion: 'Anime premium con acceso completo al catálogo de temporada.',
+                precio: 10000,
+                imagen: 'images/crunchyroll.svg'
+            },
+            {
+                id: 'crunchyroll-pantalla',
+                nombre: 'Crunchyroll Pantalla',
+                descripcion: 'Versión 1 pantalla para otakus que quieren precio accesible.',
+                precio: 5000,
+                imagen: 'images/crunchyroll.svg'
+            },
+            {
+                id: 'youtube-premium',
+                nombre: 'YouTube Premium',
+                descripcion: 'Videos sin anuncios + reproducción en segundo plano.',
+                precio: 9000,
+                imagen: 'images/youtube.svg'
+            },
+            {
+                id: 'universal',
+                nombre: 'Universal',
+                descripcion: 'Catálogo premium con estrenos y contenido exclusivo.',
+                precio: 14000,
+                imagen: 'images/universal.svg'
+            },
+            {
+                id: 'universal-pantalla',
+                nombre: 'Universal Pantalla',
+                descripcion: 'Acceso 1 pantalla para series y cine internacional.',
+                precio: 5000,
+                imagen: 'images/universal.svg'
+            }
+        ];
 
-        function cambiarTipo(btn, producto, nuevoPrecio) {
-            const parent = btn.parentElement;
-            parent.querySelectorAll('.opcion-btn').forEach(b => b.classList.remove('activo'));
-            btn.classList.add('activo');
+        const catalogoCombos = [
+            {
+                id: 'combo-basico',
+                nombre: 'Combo Básico',
+                descripcion: 'Netflix (1 pantalla) + HBO Pantalla + Spotify (1 pantalla por app).',
+                precio: 20000,
+                referencia: 26000,
+                imagen: 'images/combo-duo.svg'
+            },
+            {
+                id: 'combo-entretenimiento',
+                nombre: 'Combo Entretenimiento',
+                descripcion: 'Disney Pantalla + Crunchyroll Pantalla + YouTube Premium (1 pantalla por app).',
+                precio: 18000,
+                referencia: 18000,
+                imagen: 'images/combo-trio.svg'
+            },
+            {
+                id: 'combo-completo',
+                nombre: 'Combo Completo',
+                descripcion: 'Netflix (1 pantalla) + HBO Pantalla + Spotify (1 pantalla) + Disney Pantalla + Crunchyroll Pantalla.',
+                precio: 40000,
+                referencia: 35000,
+                imagen: 'images/combo-full.svg'
+            },
+            {
+                id: 'combo-cine-pro',
+                nombre: 'Combo Cine PRO',
+                descripcion: 'Netflix + HBO Pantalla + YouTube Premium + Universal Pantalla (1 pantalla por app).',
+                precio: 34000,
+                referencia: 30000,
+                imagen: 'images/combo-full.svg'
+            },
+            {
+                id: 'combo-anime-music',
+                nombre: 'Combo Anime & Music',
+                descripcion: 'Crunchyroll Pantalla + Disney Pantalla + Spotify (1 pantalla) + YouTube Premium (1 pantalla).',
+                precio: 32000,
+                referencia: 28000,
+                imagen: 'images/combo-trio.svg'
+            }
+        ];
 
-            const tipo = btn.dataset.tipo;
-            tiposPorProducto[producto] = tipo;
+        const todosLosProductos = [...catalogoIndividual, ...catalogoCombos];
+        const productosPorId = Object.fromEntries(todosLosProductos.map(producto => [producto.id, producto]));
+        const preciosPorProducto = Object.fromEntries(todosLosProductos.map(producto => [producto.id, producto.precio]));
 
-            const card = btn.closest('.producto-card');
-            card.querySelector('.producto-precio').textContent = '$' + nuevoPrecio.toLocaleString('es-CO');
+        function formatCOP(valor) {
+            return '$' + valor.toLocaleString('es-CO');
         }
 
-        function cambiarCantidad(producto, cambio) {
-            const input = document.getElementById(`cantidad-${producto}`);
-            let nueva = parseInt(input.value) + cambio;
+        function renderCatalogo(lista, targetId, esCombo = false) {
+            const target = document.getElementById(targetId);
+            const cards = lista.map(producto => {
+                const etiquetaCombo = esCombo
+                    ? `<div style="font-size: 11px; color: #67e8f9; font-weight: 700; margin-bottom: 10px; text-transform: uppercase; letter-spacing: .4px;">${producto.precio >= producto.referencia ? 'Margen alto' : 'Ahorro para cliente'}</div>`
+                    : '';
+
+                return `
+                    <div class="producto-card">
+                        <img src="${producto.imagen}" alt="${producto.nombre}" class="producto-imagen">
+                        <div class="producto-info">
+                            <div class="producto-nombre">${producto.nombre}</div>
+                            <div class="producto-descripcion">${producto.descripcion}</div>
+                            <div class="producto-precio">${formatCOP(producto.precio)}</div>
+                            ${etiquetaCombo}
+                            <div class="cantidad-selector">
+                                <span class="cantidad-label">Cantidad:</span>
+                                <div class="cantidad-controls">
+                                    <button class="cantidad-btn" onclick="cambiarCantidad('${producto.id}', -1)">−</button>
+                                    <input type="number" class="cantidad-input" id="cantidad-${producto.id}" value="1" min="1" max="100">
+                                    <button class="cantidad-btn" onclick="cambiarCantidad('${producto.id}', 1)">+</button>
+                                </div>
+                            </div>
+                            <button class="btn-agregar" onclick="agregarAlCarrito('${producto.id}')">➤ Añadir al carrito</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            target.innerHTML = cards;
+        }
+
+        function cambiarCantidad(productoId, cambio) {
+            const input = document.getElementById(`cantidad-${productoId}`);
+            let nueva = parseInt(input.value || '1', 10) + cambio;
             if (nueva >= 1 && nueva <= 100) {
                 input.value = nueva;
             }
         }
 
-        function agregarAlCarrito(nombre, precioBase, idProducto) {
-            const cantidad = parseInt(document.getElementById(`cantidad-${idProducto}`).value);
-            const tipo = tiposPorProducto[idProducto];
-            const precio = preciosPorProducto[idProducto][tipo];
+        function agregarAlCarrito(productoId) {
+            const producto = productosPorId[productoId];
+            const cantidad = parseInt(document.getElementById(`cantidad-${productoId}`).value || '1', 10);
+            const precio = preciosPorProducto[productoId];
 
             const item = {
-                nombre: nombre,
-                tipo: tipo,
+                nombre: producto.nombre,
                 cantidad: cantidad,
                 precioUnitario: precio,
                 precioTotal: precio * cantidad,
-                id: idProducto + '-' + tipo + '-' + Date.now()
+                id: `${productoId}-${Date.now()}-${Math.floor(Math.random() * 1000)}`
             };
 
             carrito.push(item);
             actualizarCarrito();
-            mostrarAlerta(`✓ ${nombre} (${tipo.toUpperCase()}) añadido al carrito`);
+            mostrarAlerta(`✓ ${producto.nombre} añadido al carrito`);
         }
 
         function actualizarCarrito() {
@@ -1023,24 +866,22 @@
             let totalItems = 0;
             let totalPrecio = 0;
 
-            let itemsHTML = '';
-            carrito.forEach((item, index) => {
+            const itemsHTML = carrito.map((item, index) => {
                 totalItems += item.cantidad;
                 totalPrecio += item.precioTotal;
 
-                let tipoLabel = item.tipo === 'basico' ? '(Básico)' : '(Premium)';
-                itemsHTML += `
+                return `
                     <div class="carrito-item">
-                        <div class="carrito-item-nombre">${item.nombre} ${tipoLabel}</div>
-                        <div class="carrito-item-cantidad">x${item.cantidad} = $${item.precioTotal.toLocaleString('es-CO')}</div>
+                        <div class="carrito-item-nombre">${item.nombre}</div>
+                        <div class="carrito-item-cantidad">x${item.cantidad} · Unit: ${formatCOP(item.precioUnitario)} · Subtotal: ${formatCOP(item.precioTotal)}</div>
                         <button onclick="eliminarDelCarrito(${index})" style="background: none; border: none; color: #94a3b8; cursor: pointer; font-size: 10px;">Eliminar</button>
                     </div>
                 `;
-            });
+            }).join('');
 
             cantidadElement.textContent = totalItems;
             itemsElement.innerHTML = itemsHTML;
-            totalElement.textContent = '$' + totalPrecio.toLocaleString('es-CO');
+            totalElement.textContent = formatCOP(totalPrecio);
         }
 
         function eliminarDelCarrito(index) {
@@ -1078,36 +919,59 @@
                 return;
             }
 
-            let mensaje = `🎬 *PEDIDO - TUPLATAFORMA* 🎬\n\n`;
-            mensaje += `👤 *CLIENTE:* ${nombre}\n`;
+            let mensaje = `🎬 *PEDIDO - TUPLATAFORMA* 🎬
+
+`;
+            mensaje += `👤 *CLIENTE:* ${nombre}
+`;
             if (rango) {
-                mensaje += `🧩 *PERFIL:* ${rango}\n`;
+                mensaje += `🧩 *PERFIL:* ${rango}
+`;
             }
-            mensaje += `📍 *UBICACIÓN:* ${ubicacion}\n`;
-            mensaje += `☎️ *CONTACTO:* ${telefono}\n`;
-            mensaje += `\n*═══════════════════════════*\n`;
-            mensaje += `*PLATAFORMAS SOLICITADAS:*\n`;
-            mensaje += `*═══════════════════════════*\n\n`;
+            mensaje += `📍 *UBICACIÓN:* ${ubicacion}
+`;
+            mensaje += `☎️ *CONTACTO:* ${telefono}
+`;
+            mensaje += `
+*═══════════════════════════*
+`;
+            mensaje += `*PRODUCTOS SOLICITADOS:*
+`;
+            mensaje += `*═══════════════════════════*
+
+`;
 
             let totalPrecio = 0;
             carrito.forEach(item => {
-                let tipoLabel = item.tipo === 'basico' ? 'Básico' : 'Premium';
-                mensaje += `✓ ${item.nombre} (${tipoLabel})\n`;
-                mensaje += `   Cantidad: ${item.cantidad}x\n`;
-                mensaje += `   Precio: $${item.precioTotal.toLocaleString('es-CO')}\n\n`;
+                mensaje += `✓ ${item.nombre}
+`;
+                mensaje += `   Cantidad: ${item.cantidad}x
+`;
+                mensaje += `   Unitario: ${formatCOP(item.precioUnitario)}
+`;
+                mensaje += `   Subtotal: ${formatCOP(item.precioTotal)}
+
+`;
                 totalPrecio += item.precioTotal;
             });
 
-            mensaje += `*═══════════════════════════*\n`;
-            mensaje += `💰 *TOTAL A PAGAR:* $${totalPrecio.toLocaleString('es-CO')}\n`;
-            mensaje += `*═══════════════════════════*\n\n`;
-            mensaje += `💳 *FORMA DE PAGO:* Transferencia o acuerdo por chat\n`;
+            mensaje += `*═══════════════════════════*
+`;
+            mensaje += `💰 *TOTAL A PAGAR:* ${formatCOP(totalPrecio)}
+`;
+            mensaje += `*═══════════════════════════*
+
+`;
+            mensaje += `💳 *FORMA DE PAGO:* Transferencia o acuerdo por chat
+`;
 
             if (notas) {
-                mensaje += `📝 *NOTAS:* ${notas}\n`;
+                mensaje += `📝 *NOTAS:* ${notas}
+`;
             }
 
-            mensaje += `\n🚀 *¡Pedido listo para activar!*`;
+            mensaje += `
+🚀 *¡Pedido listo para activar!*`;
 
             const numeroWhatsApp = '3234953988';
             const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
@@ -1116,6 +980,8 @@
             mostrarAlerta('✓ Pedido enviado a WhatsApp');
         });
 
+        renderCatalogo(catalogoIndividual, 'grid-individuales');
+        renderCatalogo(catalogoCombos, 'grid-combos', true);
         actualizarCarrito();
     </script>
 </body>
