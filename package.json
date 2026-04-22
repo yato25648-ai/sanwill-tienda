@@ -1,7 +1,7 @@
 {
-  "name": "sanwill-tienda",
+  "name": "tuplataforma-tienda",
   "version": "1.0.0",
-  "description": "Tienda en línea de bebidas tradicionales SANWILL",
+  "description": "Tienda en línea de plataformas de streaming - tuplataforma",
   "private": true,
   "scripts": {
     "dev": "python3 -m http.server 8000",
@@ -9,11 +9,13 @@
   },
   "keywords": [
     "tienda",
-    "bebidas",
-    "sanwill",
-    "limonada",
-    "salpicón"
+    "streaming",
+    "tuplataforma",
+    "netflix",
+    "disney",
+    "hbo",
+    "spotify"
   ],
-  "author": "SANWILL",
+  "author": "tuplataforma",
   "license": "MIT"
 }

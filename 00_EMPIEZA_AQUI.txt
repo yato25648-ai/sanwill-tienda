@@ -2,7 +2,7 @@
 ║                                                                            ║
 ║                   🚀 EMPIEZA AQUÍ - DESPLIEGUE EN VERCEL 🚀               ║
 ║                                                                            ║
-║                          Tienda SANWILL - Bebidas                         ║
+║                          Tienda tuplataforma - Bebidas                         ║
 ║                                                                            ║
 ╚════════════════════════════════════════════════════════════════════════════╝
 
@@ -11,7 +11,7 @@
                           ✅ TU PROYECTO ESTÁ LISTO
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Tu tienda SANWILL está 100% preparada para desplegar en Vercel.
+Tu tienda tuplataforma está 100% preparada para desplegar en Vercel.
 
 No necesitas cambiar NADA del código.
 
@@ -41,7 +41,7 @@ PASO 1: Crear Cuenta en GitHub
 └─ Tiempo: 3 minutos
 
 PASO 2: Crear Repositorio
-└─ Nombre: sanwill-tienda
+└─ Nombre: tuplataforma-tienda
 └─ Tipo: Public
 └─ Tiempo: 2 minutos
 
@@ -55,7 +55,7 @@ PASO 4: Conectar a Vercel
 └─ Tiempo: 2 minutos
 
 PASO 5: ¡Listo!
-└─ Tu URL: https://sanwill-tienda.vercel.app
+└─ Tu URL: https://tuplataforma-tienda.vercel.app
 └─ Comparte con tus clientes
 └─ Tiempo: 1 minuto
 

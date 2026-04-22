@@ -1,4 +1,4 @@
-# 📱 INSTRUCCIONES: DESPLEGAR SANWILL EN VERCEL
+# 📱 INSTRUCCIONES: DESPLEGAR tuplataforma EN VERCEL
 
 ## ¿QUÉ ES VERCEL?
 Vercel es una plataforma de hosting que permite alojar sitios web de forma **gratuita y automática**. Tu tienda estará disponible en línea 24/7.
@@ -23,7 +23,7 @@ Necesitarás:
 3. Completa tu información:
    - **Email**: Tu correo electrónico
    - **Password**: Una contraseña segura
-   - **Username**: Tu nombre de usuario (ej: sanwill-tienda)
+   - **Username**: Tu nombre de usuario (ej: tuplataforma-tienda)
 4. Haz clic en **"Create account"**
 5. Confirma tu correo electrónico
 
@@ -37,8 +37,8 @@ Necesitarás:
 2. Haz clic en el **"+"** en la esquina superior derecha
 3. Selecciona **"New repository"** (Nuevo repositorio)
 4. Completa los datos:
-   - **Repository name**: `sanwill-tienda`
-   - **Description**: "Tienda en línea de bebidas SANWILL"
+   - **Repository name**: `tuplataforma-tienda`
+   - **Description**: "Tienda en línea de bebidas tuplataforma"
    - **Public**: Selecciona esta opción (para que Vercel pueda acceder)
    - **Add a README file**: No marques esta opción
    - **Add .gitignore**: No marques esta opción
@@ -55,7 +55,7 @@ Abre la **Terminal/Command Prompt** en tu computadora y ejecuta estos comandos:
 
 ```bash
 # Navega a la carpeta del proyecto
-cd /home/ubuntu/sanwill_tienda
+cd /home/ubuntu/tuplataforma_tienda
 
 # Inicializa git (si aún no lo has hecho)
 git init
@@ -64,10 +64,10 @@ git init
 git add .
 
 # Crea un commit (guardado)
-git commit -m "Tienda SANWILL - Inicial"
+git commit -m "Tienda tuplataforma - Inicial"
 
 # Añade el repositorio remoto (reemplaza TU_USUARIO con tu username de GitHub)
-git remote add origin https://github.com/TU_USUARIO/sanwill-tienda.git
+git remote add origin https://github.com/TU_USUARIO/tuplataforma-tienda.git
 
 # Sube el código a GitHub
 git branch -M main
@@ -81,7 +81,7 @@ git push -u origin main
 **Para crear un token:**
 1. Ve a **https://github.com/settings/tokens**
 2. Haz clic en **"Generate new token"**
-3. Dale un nombre: "sanwill-deploy"
+3. Dale un nombre: "tuplataforma-deploy"
 4. Marca el checkbox de **"repo"**
 5. Copia el token y úsalo como contraseña
 
@@ -99,7 +99,7 @@ git push -u origin main
 6. Selecciona **"Import Git Repository"**
 7. Pega la URL de tu repositorio:
    ```
-   https://github.com/TU_USUARIO/sanwill-tienda
+   https://github.com/TU_USUARIO/tuplataforma-tienda
    ```
 8. Haz clic en **"Continue"**
 
@@ -111,7 +111,7 @@ git push -u origin main
 
 En la pantalla de configuración:
 
-- **Project Name**: `sanwill-tienda` (o el nombre que prefieras)
+- **Project Name**: `tuplataforma-tienda` (o el nombre que prefieras)
 - **Framework Preset**: Selecciona **"Other"** (es un sitio HTML estático)
 - **Root Directory**: Deja vacío
 - **Build Command**: Deja vacío
@@ -127,7 +127,7 @@ Haz clic en **"Deploy"**
 
 Una vez completado el despliegue:
 
-1. Vercel te mostrará tu **URL pública** (algo como: `https://sanwill-tienda.vercel.app`)
+1. Vercel te mostrará tu **URL pública** (algo como: `https://tuplataforma-tienda.vercel.app`)
 2. Haz clic en esa URL para ver tu tienda en línea
 3. **Guarda esa URL** - Es tu dominio permanente
 
@@ -152,7 +152,7 @@ Vercel detectará el cambio y redesplegará el sitio automáticamente.
 
 ### Tu URL permanente será algo como:
 ```
-https://sanwill-tienda.vercel.app
+https://tuplataforma-tienda.vercel.app
 ```
 
 ### Donde aparece tu sitio:
@@ -201,7 +201,7 @@ Si tienes problemas:
 
 Antes de desplegar, verifica:
 
-- [ ] Todos los archivos están en `/home/ubuntu/sanwill_tienda/`
+- [ ] Todos los archivos están en `/home/ubuntu/tuplataforma_tienda/`
 - [ ] El archivo `index.html` existe
 - [ ] La carpeta `/images/` contiene todas las bebidas
 - [ ] El archivo `vercel.json` está creado
@@ -216,11 +216,11 @@ Antes de desplegar, verifica:
 
 ---
 
-**¡Felicidades! Tu tienda SANWILL está en línea 🎉**
+**¡Felicidades! Tu tienda tuplataforma está en línea 🎉**
 
 *Recuerda compartir tu URL con tus clientes:*
 ```
-https://tu-usuario.vercel.app/sanwill-tienda
+https://tu-usuario.vercel.app/tuplataforma-tienda
 ```
 
 ---

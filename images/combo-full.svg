@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1020"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#g)"/>
+  <circle cx="190" cy="338" r="115" fill="#F43F5E" opacity="0.18"/>
+  <circle cx="190" cy="338" r="88" fill="none" stroke="#F43F5E" stroke-width="10"/>
+  <text x="190" y="362" text-anchor="middle" fill="#F43F5E" font-family="Arial Black, Arial" font-size="74" font-weight="900">4+</text>
+  <text x="340" y="325" fill="#E5E7EB" font-family="Arial Black, Arial" font-size="72" font-weight="900" letter-spacing="2">COMBO 4+</text>
+  <rect x="340" y="355" width="520" height="6" fill="#F43F5E"/>
+  <text x="340" y="420" fill="#94A3B8" font-family="Arial, sans-serif" font-size="34">Streaming digital • Activación rápida</text>
+</svg>

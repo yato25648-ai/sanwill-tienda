@@ -1,8 +1,8 @@
 ═══════════════════════════════════════════════════════════════════════════════
-                        RESUMEN FINAL - SANWILL TIENDA
+                        RESUMEN FINAL - tuplataforma TIENDA
 ═══════════════════════════════════════════════════════════════════════════════
 
-PROYECTO: Tienda SANWILL - Bebidas Tradicionales
+PROYECTO: Tienda tuplataforma - Bebidas Tradicionales
 ESTADO: ✅ 100% LISTO PARA DESPLEGAR
 FECHA: Abril 5, 2025
 VERSIÓN: 1.0.0
@@ -39,7 +39,7 @@ GIT:
                           ESTRUCTURA DEL PROYECTO
 ═══════════════════════════════════════════════════════════════════════════════
 
-/home/ubuntu/sanwill_tienda/
+/home/ubuntu/tuplataforma_tienda/
 ├── 📄 INICIO.txt                           [Guía de presentación]
 ├── 📄 INSTRUCCIONES_VERCEL.md              [GUÍA PASO A PASO - LEER ESTO]
 ├── 📄 INSTRUCCIONES_VERCEL.pdf             [Versión PDF de instrucciones]
@@ -93,11 +93,11 @@ Todas las imágenes están:
 
 2. GITHUB SETUP (5 minutos)
    → Crear cuenta en https://github.com
-   → Crear repositorio "sanwill-tienda"
+   → Crear repositorio "tuplataforma-tienda"
 
 3. SUBIR CÓDIGO (3 minutos)
-   cd /home/ubuntu/sanwill_tienda
-   git remote add origin https://github.com/TU_USUARIO/sanwill-tienda.git
+   cd /home/ubuntu/tuplataforma_tienda
+   git remote add origin https://github.com/TU_USUARIO/tuplataforma-tienda.git
    git branch -M main
    git push -u origin main
 
@@ -108,7 +108,7 @@ Todas las imágenes están:
    → Vercel hará el deploy automático
 
 5. OBTEN TU URL (1 minuto)
-   → Vercel te proporciona: https://sanwill-tienda.vercel.app
+   → Vercel te proporciona: https://tuplataforma-tienda.vercel.app
    → ¡Comparte con tus clientes!
 
 TIEMPO TOTAL: ~13 minutos
@@ -226,7 +226,7 @@ R: SÍ, cada cambio en GitHub automáticamente actualiza Vercel.
 2. ✅ VE A: https://github.com
    (Crea tu cuenta si no tienes)
 
-3. ✅ CREA: Nuevo repositorio "sanwill-tienda"
+3. ✅ CREA: Nuevo repositorio "tuplataforma-tienda"
    (Asegúrate de marcar "Public")
 
 4. ✅ EJECUTA: Los comandos de git en tu terminal

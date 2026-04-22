@@ -1,4 +1,4 @@
-# 🚀 GUÍA RÁPIDA: DESPLEGAR SANWILL EN VERCEL
+# 🚀 GUÍA RÁPIDA: DESPLEGAR tuplataforma EN VERCEL
 
 ## ✅ ESTADO DEL PROYECTO
 
@@ -33,13 +33,13 @@ Tu proyecto está **100% listo para desplegar**. Todos los archivos necesarios h
 ### 1️⃣ GitHub Setup (5 minutos)
 ```
 https://github.com/signup → Crea cuenta
-→ Crea un nuevo repositorio "sanwill-tienda"
+→ Crea un nuevo repositorio "tuplataforma-tienda"
 ```
 
 ### 2️⃣ Subir código a GitHub (2 minutos)
 ```bash
-cd /home/ubuntu/sanwill_tienda
-git remote add origin https://github.com/TU_USUARIO/sanwill-tienda.git
+cd /home/ubuntu/tuplataforma_tienda
+git remote add origin https://github.com/TU_USUARIO/tuplataforma-tienda.git
 git branch -M main
 git push -u origin main
 ```
@@ -52,7 +52,7 @@ https://vercel.com → Inicia sesión con GitHub
 ```
 
 ### 4️⃣ ¡Listo! (1 minuto)
-- Tu URL: `https://sanwill-tienda.vercel.app`
+- Tu URL: `https://tuplataforma-tienda.vercel.app`
 - Compartir con clientes
 - Disfrutar del éxito 🎉
 
@@ -114,7 +114,7 @@ Vercel Dashboard → Proyecto → Settings → Domains
 ### Para obtener tu token de GitHub:
 1. Abre: https://github.com/settings/tokens
 2. "Generate new token" → "Generate new token (classic)"
-3. Dale nombre: "sanwill-deploy"
+3. Dale nombre: "tuplataforma-deploy"
 4. Marca: "repo"
 5. Copia el token
 
@@ -202,14 +202,14 @@ Si necesitas ayuda:
 
 ## ✨ INFORMACIÓN DE CONTACTO
 
-**Proyecto**: SANWILL - Tienda de Bebidas Tradicionales
+**Proyecto**: tuplataforma - Tienda de Bebidas Tradicionales
 **Versión**: 1.0.0
 **Fecha**: Abril 2025
 **Estado**: ✅ Listo para producción
 
 ---
 
-**¡Tu tienda SANWILL está lista para llegar al mundo! 🌍**
+**¡Tu tienda tuplataforma está lista para llegar al mundo! 🌍**
 
 Sigue los pasos en `INSTRUCCIONES_VERCEL.md` y estarás en línea en menos de 15 minutos.
 

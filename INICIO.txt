@@ -1,6 +1,6 @@
 ╔════════════════════════════════════════════════════════════════════════════╗
 ║                                                                            ║
-║                     🥤 SANWILL - TIENDA EN LÍNEA 🥤                       ║
+║                     🥤 tuplataforma - TIENDA EN LÍNEA 🥤                       ║
 ║                                                                            ║
 ║                  PROYECTO LISTO PARA DESPLEGAR EN VERCEL                  ║
 ║                                                                            ║
@@ -52,11 +52,11 @@ PASO 1: Crear cuenta en GitHub (si no tienes)
   → https://github.com/signup
 
 PASO 2: Crear repositorio en GitHub
-  → Nombre: "sanwill-tienda"
+  → Nombre: "tuplataforma-tienda"
   → Público (importante)
 
 PASO 3: Subir código a GitHub
-  $ git remote add origin https://github.com/TU_USUARIO/sanwill-tienda.git
+  $ git remote add origin https://github.com/TU_USUARIO/tuplataforma-tienda.git
   $ git branch -M main
   $ git push -u origin main
 
@@ -67,14 +67,14 @@ PASO 4: Conectar a Vercel
   → Deploy
 
 PASO 5: ¡Listo!
-  → Tu URL: https://sanwill-tienda.vercel.app
+  → Tu URL: https://tuplataforma-tienda.vercel.app
   → Compartir con clientes
 
 
 🎯 INFORMACIÓN DEL PROYECTO
 ═══════════════════════════════════════════════════════════════════════════════
 
-Nombre:              SANWILL - Tienda de Bebidas
+Nombre:              tuplataforma - Tienda de Bebidas
 Versión:             1.0.0
 Tipo:                Tienda en línea (HTML estático)
 Hosting:             Vercel (gratuito)

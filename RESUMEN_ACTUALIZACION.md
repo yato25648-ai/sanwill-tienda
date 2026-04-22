@@ -1,8 +1,8 @@
-# 🎖️ SANWILL - TIENDA MILITAR ACTUALIZADA 🎖️
+# 🎖️ tuplataforma - TIENDA MILITAR ACTUALIZADA 🎖️
 
 ## ✅ ACTUALIZACIÓN COMPLETADA CON ÉXITO
 
-La tienda virtual SANWILL ha sido completamente rediseñada con **tema militar épico y totalmente funcional**.
+La tienda virtual tuplataforma ha sido completamente rediseñada con **tema militar épico y totalmente funcional**.
 
 ---
 
@@ -13,7 +13,7 @@ La tienda virtual SANWILL ha sido completamente rediseñada con **tema militar �
 - ✅ Tipografía: Arial Black - Bold, fuerte, militarista
 - ✅ Bordes y decoraciones tipo camuflaje/militar
 - ✅ Header con diseño castrense y engranajes (⚙️)
-- ✅ Título: "SANWILL - COMANDO DE HIDRATACIÓN"
+- ✅ Título: "tuplataforma - COMANDO DE HIDRATACIÓN"
 - ✅ Eslogan: "HIDRATACIÓN TÁCTICA PARA GUERREROS"
 - ✅ Efecto camuflaje en el fondo
 - ✅ Textos motivacionales militares
@@ -29,7 +29,7 @@ Los 5 productos con imágenes reales del cliente:
 | Limonada | LIM.jpg | images/limonada.jpg |
 | Salpicón con Helado | S.jpg | images/salpicon.jpg |
 
-**Todas las imágenes copiadas a:** `/home/ubuntu/sanwill_tienda/images/`
+**Todas las imágenes copiadas a:** `/home/ubuntu/tuplataforma_tienda/images/`
 
 ### 3. 💰 PRECIOS EN PESOS COLOMBIANOS
 - Maracuyada: **$13.000** (o $14.000 Granizado)
@@ -63,8 +63,8 @@ Los 5 productos con imágenes reales del cliente:
 "La recompensa del guerrero después de la batalla. Frutas, hielo y gloria en cada vaso. Descansa conquistador, te lo mereces."
 
 ### 6. 📱 INTEGRACIÓN WHATSAPP COMPLETA
-- ✅ Número configurado: **573025269081**
-- ✅ URL de envío: `https://wa.me/573025269081`
+- ✅ Número configurado: **3234953988**
+- ✅ URL de envío: `https://wa.me/3234953988`
 - ✅ **PROBADO Y FUNCIONANDO:** El mensaje WhatsApp se genera correctamente ✓
 
 **Formato del mensaje incluye:**
@@ -172,7 +172,7 @@ Los 5 productos con imágenes reales del cliente:
 ## 🧪 PRUEBAS REALIZADAS
 
 ### Test 1: Carga de Imágenes
-✅ **RESULTADO:** Las 5 imágenes se cargan correctamente desde `/home/ubuntu/sanwill_tienda/images/`
+✅ **RESULTADO:** Las 5 imágenes se cargan correctamente desde `/home/ubuntu/tuplataforma_tienda/images/`
 
 ### Test 2: Agregación de Productos
 ✅ **RESULTADO:** Se agregó 1 Limonada (Normal) = $6.000
@@ -194,7 +194,7 @@ Los 5 productos con imágenes reales del cliente:
   - Teléfono: "3005551234"
   - Posición: "Pabellón A - Sección 3"
   - Notas: "Sin hielo en el salpicón"
-- URL de WhatsApp generada correctamente: `https://api.whatsapp.com/send?phone=573025269081&text=[mensaje]`
+- URL de WhatsApp generada correctamente: `https://api.whatsapp.com/send?phone=3234953988&text=[mensaje]`
 - Mensaje construido correctamente con todos los datos
 - Se mostraron los 2 productos con sus tipos (Normal, Granizado)
 - Total correcto: $20.000
@@ -213,7 +213,7 @@ Los 5 productos con imágenes reales del cliente:
 ## 📂 ESTRUCTURA DE ARCHIVOS
 
 ```
-/home/ubuntu/sanwill_tienda/
+/home/ubuntu/tuplataforma_tienda/
 ├── index.html                    ← TIENDA COMPLETA (totalmente funcional)
 ├── images/
 │   ├── maracuyada.jpg
@@ -231,20 +231,20 @@ Los 5 productos con imágenes reales del cliente:
 ### Opción 1: Abrir en el Navegador Local
 ```bash
 # Desde la máquina local
-open /home/ubuntu/sanwill_tienda/index.html
+open /home/ubuntu/tuplataforma_tienda/index.html
 # o
-firefox /home/ubuntu/sanwill_tienda/index.html
+firefox /home/ubuntu/tuplataforma_tienda/index.html
 ```
 
 ### Opción 2: Servir con HTTP (Recomendado para producc.)
 ```bash
-cd /home/ubuntu/sanwill_tienda
+cd /home/ubuntu/tuplataforma_tienda
 python3 -m http.server 8000
 # Luego acceder a: http://localhost:8000
 ```
 
 ### Opción 3: Desplegar en Servidor
-- Copiar la carpeta `/home/ubuntu/sanwill_tienda/` a tu servidor
+- Copiar la carpeta `/home/ubuntu/tuplataforma_tienda/` a tu servidor
 - Asegurar que los permisos de archivos sean correctos
 - El archivo `index.html` es completamente autónomo (HTML + CSS + JavaScript embebido)
 
@@ -273,7 +273,7 @@ En el JavaScript del `index.html` puedes personalizar:
 
 **Número de WhatsApp:**
 ```javascript
-const numeroWhatsApp = '573025269081';
+const numeroWhatsApp = '3234953988';
 ```
 
 **Precios de productos:**
@@ -309,7 +309,7 @@ Edita el HTML en las secciones `<div class="producto-descripcion">`
 
 ## 📞 INFORMACIÓN DE CONTACTO INTEGRADA
 
-**Número de WhatsApp:** `573025269081`
+**Número de WhatsApp:** `3234953988`
 **Ubicación:** Nilo, Cundinamarca
 **Institución:** Escuela de Soldados Profesionales
 
@@ -317,7 +317,7 @@ Edita el HTML en las secciones `<div class="producto-descripcion">`
 
 ## ✨ CONCLUSIÓN
 
-La tienda SANWILL ha sido **completamente rediseñada y renovada** con:
+La tienda tuplataforma ha sido **completamente rediseñada y renovada** con:
 - ✅ Tema militar épico y motivador
 - ✅ Todas las funcionalidades 100% operacionales
 - ✅ Integración con WhatsApp funcionando perfectamente

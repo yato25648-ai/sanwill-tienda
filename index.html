@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SANWILL - Comando de Hidratación</title>
+    <title>tuplataforma - Tienda de Streaming</title>
     <style>
         * {
             margin: 0;
@@ -11,16 +11,27 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --bg-main: #070b14;
+            --bg-secondary: #0f172a;
+            --bg-card: #111827;
+            --accent-primary: #22d3ee;
+            --accent-secondary: #a855f7;
+            --accent-tertiary: #f43f5e;
+            --text-main: #e5e7eb;
+            --text-muted: #94a3b8;
+            --border-glow: rgba(34, 211, 238, 0.45);
+        }
+
         body {
             font-family: 'Arial Black', Arial, sans-serif;
-            background: linear-gradient(135deg, #111827 0%, #1f2937 50%, #0f1419 100%);
-            color: #f3f4f6;
+            background: radial-gradient(circle at top, #111827 0%, var(--bg-main) 45%, #030712 100%);
+            color: var(--text-main);
             min-height: 100vh;
             position: relative;
             overflow-x: hidden;
         }
 
-        /* Efecto camuflaje en el fondo */
         body::before {
             content: '';
             position: fixed;
@@ -28,13 +39,13 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: 
-                linear-gradient(45deg, rgba(212, 175, 55, 0.03) 25%, transparent 25%),
-                linear-gradient(-45deg, rgba(212, 175, 55, 0.03) 25%, transparent 25%),
-                linear-gradient(45deg, transparent 75%, rgba(212, 175, 55, 0.03) 75%),
-                linear-gradient(-45deg, transparent 75%, rgba(212, 175, 55, 0.03) 75%);
-            background-size: 40px 40px;
-            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            background-image:
+                linear-gradient(45deg, rgba(168, 85, 247, 0.06) 25%, transparent 25%),
+                linear-gradient(-45deg, rgba(34, 211, 238, 0.05) 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, rgba(244, 63, 94, 0.05) 75%),
+                linear-gradient(-45deg, transparent 75%, rgba(34, 211, 238, 0.04) 75%);
+            background-size: 42px 42px;
+            background-position: 0 0, 0 12px, 12px -12px, -12px 0;
             pointer-events: none;
             z-index: 0;
         }
@@ -47,34 +58,33 @@
             z-index: 1;
         }
 
-        /* HEADER MILITAR */
         header {
-            background: linear-gradient(180deg, #0a0e16 0%, #1f2937 100%);
-            border-bottom: 4px solid #d4af37;
+            background: linear-gradient(180deg, #0b1120 0%, #111827 100%);
+            border-bottom: 4px solid var(--accent-primary);
             padding: 30px 0;
             margin-bottom: 40px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
             position: relative;
             overflow: hidden;
         }
 
         header::before {
-            content: '⚔️';
+            content: '▶️';
             position: absolute;
             left: 20px;
             top: 50%;
             transform: translateY(-50%);
-            font-size: 40px;
+            font-size: 34px;
             opacity: 0.3;
         }
 
         header::after {
-            content: '⚔️';
+            content: '🎬';
             position: absolute;
             right: 20px;
             top: 50%;
             transform: translateY(-50%);
-            font-size: 40px;
+            font-size: 34px;
             opacity: 0.3;
         }
 
@@ -84,10 +94,8 @@
 
         h1 {
             font-size: clamp(28px, 6vw, 48px);
-            color: #d4af37;
-            text-shadow: 
-                2px 2px 4px rgba(0, 0, 0, 0.8),
-                0 0 10px rgba(212, 175, 55, 0.5);
+            color: var(--accent-primary);
+            text-shadow: 0 0 16px rgba(34, 211, 238, 0.5);
             margin-bottom: 10px;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -96,25 +104,24 @@
 
         .eslogan {
             font-size: clamp(14px, 3vw, 20px);
-            color: #9ca3af;
+            color: #cbd5e1;
             text-transform: uppercase;
             letter-spacing: 3px;
             font-weight: bold;
             margin-top: 8px;
-            border-top: 2px solid #d4af37;
-            border-bottom: 2px solid #d4af37;
+            border-top: 2px solid var(--accent-secondary);
+            border-bottom: 2px solid var(--accent-secondary);
             padding: 8px 0;
         }
 
         .motto {
             font-size: 13px;
-            color: #d4af37;
+            color: var(--accent-tertiary);
             margin-top: 12px;
             font-style: italic;
-            opacity: 0.9;
+            opacity: 0.95;
         }
 
-        /* SECCIÓN DE PRODUCTOS */
         .productos-section {
             margin-bottom: 50px;
         }
@@ -122,7 +129,7 @@
         .section-title {
             text-align: center;
             font-size: 32px;
-            color: #d4af37;
+            color: var(--accent-secondary);
             text-transform: uppercase;
             margin-bottom: 40px;
             letter-spacing: 2px;
@@ -136,6 +143,7 @@
             display: inline-block;
             margin: 0 15px;
             font-size: 20px;
+            color: var(--accent-primary);
         }
 
         .productos-grid {
@@ -146,19 +154,19 @@
         }
 
         .producto-card {
-            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-            border: 3px solid #d4af37;
-            border-radius: 8px;
+            background: linear-gradient(135deg, #111827 0%, #0b1220 100%);
+            border: 2px solid var(--border-glow);
+            border-radius: 10px;
             overflow: hidden;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.15);
+            box-shadow: 0 8px 24px rgba(34, 211, 238, 0.12);
             position: relative;
         }
 
         .producto-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.3);
-            border-color: #fff;
+            box-shadow: 0 14px 30px rgba(168, 85, 247, 0.27);
+            border-color: var(--accent-secondary);
         }
 
         .producto-card::before {
@@ -168,15 +176,17 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, #d4af37, transparent);
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
             z-index: 10;
         }
 
         .producto-imagen {
             width: 100%;
             height: 220px;
-            object-fit: cover;
-            border-bottom: 2px solid #d4af37;
+            object-fit: contain;
+            background: #070b14;
+            padding: 18px;
+            border-bottom: 2px solid rgba(168, 85, 247, 0.45);
         }
 
         .producto-info {
@@ -186,7 +196,7 @@
         .producto-nombre {
             font-size: 18px;
             font-weight: 900;
-            color: #d4af37;
+            color: var(--accent-primary);
             margin-bottom: 8px;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -203,19 +213,18 @@
         .producto-precio {
             font-size: 24px;
             font-weight: 900;
-            color: #d4af37;
+            color: var(--accent-secondary);
             margin-bottom: 12px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            text-shadow: 0 0 12px rgba(168, 85, 247, 0.28);
         }
 
-        /* Selector Normal/Granizado */
         .opciones-bebida {
             margin-bottom: 12px;
         }
 
         .opciones-label {
             font-size: 12px;
-            color: #9ca3af;
+            color: var(--text-muted);
             text-transform: uppercase;
             margin-bottom: 6px;
             display: block;
@@ -231,9 +240,9 @@
         .opcion-btn {
             flex: 1;
             padding: 8px 12px;
-            border: 2px solid #d4af37;
+            border: 2px solid var(--accent-primary);
             background: transparent;
-            color: #d4af37;
+            color: var(--accent-primary);
             font-weight: bold;
             cursor: pointer;
             border-radius: 4px;
@@ -243,16 +252,15 @@
         }
 
         .opcion-btn.activo {
-            background: #d4af37;
-            color: #111827;
+            background: var(--accent-primary);
+            color: #031621;
         }
 
         .opcion-btn:hover {
-            background: #d4af37;
-            color: #111827;
+            background: var(--accent-primary);
+            color: #031621;
         }
 
-        /* Cantidad */
         .cantidad-selector {
             display: flex;
             align-items: center;
@@ -262,7 +270,7 @@
 
         .cantidad-label {
             font-size: 12px;
-            color: #9ca3af;
+            color: var(--text-muted);
             text-transform: uppercase;
             flex: 1;
             font-weight: bold;
@@ -270,7 +278,7 @@
 
         .cantidad-controls {
             display: flex;
-            border: 2px solid #d4af37;
+            border: 2px solid var(--accent-secondary);
             border-radius: 4px;
         }
 
@@ -279,7 +287,7 @@
             height: 30px;
             border: none;
             background: transparent;
-            color: #d4af37;
+            color: var(--accent-secondary);
             font-weight: bold;
             cursor: pointer;
             font-size: 16px;
@@ -287,15 +295,15 @@
         }
 
         .cantidad-btn:hover {
-            background: #d4af37;
-            color: #111827;
+            background: var(--accent-secondary);
+            color: #0f172a;
         }
 
         .cantidad-input {
             width: 50px;
             border: none;
             background: transparent;
-            color: #d4af37;
+            color: var(--accent-secondary);
             text-align: center;
             font-weight: bold;
             font-size: 14px;
@@ -305,12 +313,11 @@
             outline: none;
         }
 
-        /* Botón Añadir */
         .btn-agregar {
             width: 100%;
             padding: 12px;
-            background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
-            color: #111827;
+            background: linear-gradient(135deg, var(--accent-secondary) 0%, var(--accent-tertiary) 100%);
+            color: #ffffff;
             border: none;
             font-weight: 900;
             font-size: 14px;
@@ -319,31 +326,30 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: all 0.3s;
-            box-shadow: 0 4px 8px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
         }
 
         .btn-agregar:hover {
             transform: scale(1.05);
-            box-shadow: 0 6px 12px rgba(212, 175, 55, 0.5);
+            box-shadow: 0 8px 15px rgba(244, 63, 94, 0.35);
         }
 
         .btn-agregar:active {
             transform: scale(0.98);
         }
 
-        /* CARRITO FLOTANTE */
         .carrito-flotante {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
-            color: #111827;
+            background: linear-gradient(135deg, #0b1220 0%, #111827 100%);
+            color: #e5e7eb;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.55);
             z-index: 100;
             max-width: 300px;
-            border: 3px solid #111827;
+            border: 2px solid var(--accent-primary);
         }
 
         .carrito-titulo {
@@ -352,20 +358,23 @@
             text-transform: uppercase;
             margin-bottom: 10px;
             letter-spacing: 1px;
+            color: var(--accent-primary);
         }
 
         .carrito-count {
             font-size: 28px;
             font-weight: 900;
             margin-bottom: 8px;
+            color: var(--accent-secondary);
         }
 
         .carrito-total {
             font-size: 18px;
             font-weight: 900;
             margin-bottom: 12px;
-            border-top: 2px solid #111827;
+            border-top: 2px solid rgba(148, 163, 184, 0.3);
             padding-top: 8px;
+            color: var(--accent-primary);
         }
 
         .carrito-items {
@@ -373,14 +382,14 @@
             overflow-y: auto;
             margin-bottom: 12px;
             font-size: 12px;
-            border-bottom: 2px solid #111827;
+            border-bottom: 2px solid rgba(148, 163, 184, 0.3);
             padding-bottom: 10px;
         }
 
         .carrito-item {
             margin-bottom: 6px;
             padding: 4px 0;
-            border-bottom: 1px solid rgba(17, 24, 39, 0.3);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.2);
         }
 
         .carrito-item-nombre {
@@ -388,16 +397,16 @@
         }
 
         .carrito-item-cantidad {
-            color: #5a3817;
+            color: #cbd5e1;
             font-size: 11px;
         }
 
         .btn-completar {
             width: 100%;
             padding: 14px;
-            background: #111827;
-            color: #d4af37;
-            border: 2px solid #111827;
+            background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+            color: #04121d;
+            border: none;
             font-weight: 900;
             font-size: 13px;
             cursor: pointer;
@@ -409,22 +418,21 @@
 
         .btn-completar:hover {
             transform: scale(1.05);
-            box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 0 16px rgba(34, 211, 238, 0.45);
         }
 
-        /* FORMULARIO */
         .formulario-section {
-            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-            border: 3px solid #d4af37;
+            background: linear-gradient(135deg, #111827 0%, #0b1220 100%);
+            border: 2px solid rgba(168, 85, 247, 0.55);
             padding: 30px;
             border-radius: 8px;
             margin-bottom: 40px;
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.1);
+            box-shadow: 0 8px 20px rgba(34, 211, 238, 0.1);
         }
 
         .formulario-titulo {
             font-size: 24px;
-            color: #d4af37;
+            color: var(--accent-primary);
             text-transform: uppercase;
             margin-bottom: 25px;
             text-align: center;
@@ -438,7 +446,7 @@
         .form-label {
             display: block;
             font-size: 13px;
-            color: #9ca3af;
+            color: var(--text-muted);
             text-transform: uppercase;
             margin-bottom: 8px;
             font-weight: bold;
@@ -448,9 +456,9 @@
         .form-input {
             width: 100%;
             padding: 12px 15px;
-            background: #0a0e16;
-            border: 2px solid #d4af37;
-            color: #d4af37;
+            background: #030712;
+            border: 2px solid rgba(34, 211, 238, 0.5);
+            color: var(--accent-primary);
             border-radius: 4px;
             font-family: Arial, sans-serif;
             font-size: 14px;
@@ -459,12 +467,12 @@
 
         .form-input:focus {
             outline: none;
-            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
-            border-color: #fff;
+            box-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+            border-color: var(--accent-secondary);
         }
 
         .form-input::placeholder {
-            color: #6b7280;
+            color: #64748b;
         }
 
         .form-grid {
@@ -479,11 +487,10 @@
             }
         }
 
-        /* BOTÓN PRINCIPAL */
         .btn-whatsapp {
             width: 100%;
             padding: 16px;
-            background: linear-gradient(135deg, #25D366 0%, #20a84f 100%);
+            background: linear-gradient(135deg, #25D366 0%, #16a34a 100%);
             color: white;
             border: none;
             font-weight: 900;
@@ -505,14 +512,13 @@
             transform: scale(0.98);
         }
 
-        /* FOOTER */
         footer {
-            background: linear-gradient(180deg, #0a0e16 0%, #1f2937 100%);
-            border-top: 4px solid #d4af37;
+            background: linear-gradient(180deg, #0b1120 0%, #111827 100%);
+            border-top: 4px solid var(--accent-secondary);
             padding: 30px 0;
             text-align: center;
             margin-top: 50px;
-            color: #9ca3af;
+            color: var(--text-muted);
         }
 
         .footer-content p {
@@ -523,7 +529,7 @@
 
         .footer-title {
             font-size: 14px;
-            color: #d4af37;
+            color: var(--accent-primary);
             font-weight: 900;
             text-transform: uppercase;
             margin-bottom: 8px;
@@ -532,24 +538,22 @@
 
         .footer-eslogan {
             font-size: 13px;
-            color: #d4af37;
+            color: var(--accent-secondary);
             font-style: italic;
             margin-top: 15px;
             padding-top: 15px;
-            border-top: 2px solid #d4af37;
+            border-top: 2px solid rgba(168, 85, 247, 0.5);
         }
 
-        /* TEXTOS MOTIVACIONALES */
         .motivacional {
             text-align: center;
             font-size: 13px;
-            color: #d4af37;
+            color: var(--accent-primary);
             margin-bottom: 30px;
             font-style: italic;
             letter-spacing: 1px;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .productos-grid {
                 grid-template-columns: 1fr;
@@ -566,7 +570,6 @@
             }
         }
 
-        /* Animación de alertas */
         .alerta {
             position: fixed;
             top: 20px;
@@ -595,281 +598,376 @@
             background: #ef4444;
         }
 
-        /* Ocultar carrito si está vacío */
         .carrito-flotante.vacio {
             display: none;
         }
     </style>
 </head>
 <body>
-    <!-- HEADER MILITAR -->
     <header>
         <div class="container">
             <div class="header-content">
-                <h1>⚙️ SANWILL ⚙️</h1>
-                <div class="eslogan">Comando de Hidratación</div>
-                <div class="motto">Hidratación Táctica para Guerreros</div>
+                <h1>✨ tuplataforma ✨</h1>
+                <div class="eslogan">Tus plataformas premium en un solo lugar</div>
+                <div class="motto">Entretenimiento digital al instante, precios inteligentes en COP</div>
             </div>
         </div>
     </header>
 
     <div class="container">
-        <!-- MOTIVACIÓN -->
         <div class="motivacional">
-            "En la batalla por mantenerte hidratado, no hay rendición. Cada sorbo es un paso hacia la victoria."
+            "Sube de nivel tu entretenimiento con cuentas estables, activación rápida y soporte directo por WhatsApp."
         </div>
 
-        <!-- SECCIÓN PRODUCTOS -->
         <section class="productos-section">
-            <div class="section-title">Armamento Refrescante</div>
+            <div class="section-title">Catálogo de Plataformas</div>
 
             <div class="productos-grid">
-                <!-- MARACUYADA -->
                 <div class="producto-card">
-                    <img src="images/maracuyada.jpg" alt="Maracuyada" class="producto-imagen">
+                    <img src="images/netflix.svg" alt="Netflix" class="producto-imagen">
                     <div class="producto-info">
-                        <div class="producto-nombre">Maracuyada</div>
-                        <div class="producto-descripcion">
-                            Refrescante bebida de maracuyá, perfecta para el calor y el sacrificio de un hombre de guerra. Mantente hidratado, mantén la disciplina.
-                        </div>
-                        <div class="producto-precio">$13.000</div>
-                        
+                        <div class="producto-nombre">Netflix Premium</div>
+                        <div class="producto-descripcion">Series, películas y estrenos semanales en HD/4K. Ideal para maratones sin pausas.</div>
+                        <div class="producto-precio">$19.500</div>
                         <div class="opciones-bebida">
-                            <label class="opciones-label">Tipo de Bebida:</label>
+                            <label class="opciones-label">Plan:</label>
                             <div class="opciones-grupo">
-                                <button class="opcion-btn activo" data-tipo="normal" onclick="cambiarTipo(this, 'maracuyada', 13000)">Normal</button>
-                                <button class="opcion-btn" data-tipo="granizado" onclick="cambiarTipo(this, 'maracuyada', 14000)">Granizado +$1K</button>
+                                <button class="opcion-btn activo" data-tipo="basico" onclick="cambiarTipo(this, 'netflix', 19500)">Básico</button>
+                                <button class="opcion-btn" data-tipo="premium" onclick="cambiarTipo(this, 'netflix', 21000)">Premium</button>
                             </div>
                         </div>
-
                         <div class="cantidad-selector">
                             <span class="cantidad-label">Cantidad:</span>
                             <div class="cantidad-controls">
-                                <button class="cantidad-btn" onclick="cambiarCantidad('maracuyada', -1)">−</button>
-                                <input type="number" class="cantidad-input" id="cantidad-maracuyada" value="1" min="1" max="100">
-                                <button class="cantidad-btn" onclick="cambiarCantidad('maracuyada', 1)">+</button>
+                                <button class="cantidad-btn" onclick="cambiarCantidad('netflix', -1)">−</button>
+                                <input type="number" class="cantidad-input" id="cantidad-netflix" value="1" min="1" max="100">
+                                <button class="cantidad-btn" onclick="cambiarCantidad('netflix', 1)">+</button>
                             </div>
                         </div>
-
-                        <button class="btn-agregar" onclick="agregarAlCarrito('Maracuyada', 13000, 'maracuyada')">➤ Añadir a la Misión</button>
+                        <button class="btn-agregar" onclick="agregarAlCarrito('Netflix Premium', 19500, 'netflix')">➤ Añadir al carrito</button>
                     </div>
                 </div>
 
-                <!-- LULADA -->
                 <div class="producto-card">
-                    <img src="images/lulada.jpg" alt="Lulada" class="producto-imagen">
+                    <img src="images/disney.svg" alt="Disney+" class="producto-imagen">
                     <div class="producto-info">
-                        <div class="producto-nombre">Lulada</div>
-                        <div class="producto-descripcion">
-                            Bebida energética de lulo que te mantiene en combate. Para los valientes que no se rinden. Fortaleza en cada sorbo.
-                        </div>
-                        <div class="producto-precio">$13.000</div>
-                        
+                        <div class="producto-nombre">Disney+</div>
+                        <div class="producto-descripcion">Catálogo Disney, Pixar, Marvel, Star Wars y National Geographic para toda la familia.</div>
+                        <div class="producto-precio">$6.900</div>
                         <div class="opciones-bebida">
-                            <label class="opciones-label">Tipo de Bebida:</label>
+                            <label class="opciones-label">Plan:</label>
                             <div class="opciones-grupo">
-                                <button class="opcion-btn activo" data-tipo="normal" onclick="cambiarTipo(this, 'lulada', 13000)">Normal</button>
-                                <button class="opcion-btn" data-tipo="granizado" onclick="cambiarTipo(this, 'lulada', 14000)">Granizado +$1K</button>
+                                <button class="opcion-btn activo" data-tipo="basico" onclick="cambiarTipo(this, 'disney', 6900)">Básico</button>
+                                <button class="opcion-btn" data-tipo="premium" onclick="cambiarTipo(this, 'disney', 7900)">Premium</button>
                             </div>
                         </div>
-
                         <div class="cantidad-selector">
                             <span class="cantidad-label">Cantidad:</span>
                             <div class="cantidad-controls">
-                                <button class="cantidad-btn" onclick="cambiarCantidad('lulada', -1)">−</button>
-                                <input type="number" class="cantidad-input" id="cantidad-lulada" value="1" min="1" max="100">
-                                <button class="cantidad-btn" onclick="cambiarCantidad('lulada', 1)">+</button>
+                                <button class="cantidad-btn" onclick="cambiarCantidad('disney', -1)">−</button>
+                                <input type="number" class="cantidad-input" id="cantidad-disney" value="1" min="1" max="100">
+                                <button class="cantidad-btn" onclick="cambiarCantidad('disney', 1)">+</button>
                             </div>
                         </div>
-
-                        <button class="btn-agregar" onclick="agregarAlCarrito('Lulada', 13000, 'lulada')">➤ Añadir a la Misión</button>
+                        <button class="btn-agregar" onclick="agregarAlCarrito('Disney+', 6900, 'disney')">➤ Añadir al carrito</button>
                     </div>
                 </div>
 
-                <!-- MANGO BICHE -->
                 <div class="producto-card">
-                    <img src="images/mango-biche.jpg" alt="Mango Biche" class="producto-imagen">
+                    <img src="images/hbo.svg" alt="HBO Max" class="producto-imagen">
                     <div class="producto-info">
-                        <div class="producto-nombre">Mango Biche</div>
-                        <div class="producto-descripcion">
-                            Mango verde, bebida verde, corazón de acero. El drink del soldado que enfrenta cada misión con valor y honor.
-                        </div>
-                        <div class="producto-precio">$12.000</div>
-                        
+                        <div class="producto-nombre">HBO Max</div>
+                        <div class="producto-descripcion">Producciones originales, estrenos de Warner y series top con calidad premium.</div>
+                        <div class="producto-precio">$6.500</div>
                         <div class="opciones-bebida">
-                            <label class="opciones-label">Tipo de Bebida:</label>
+                            <label class="opciones-label">Plan:</label>
                             <div class="opciones-grupo">
-                                <button class="opcion-btn activo" data-tipo="normal" onclick="cambiarTipo(this, 'mango', 12000)">Normal</button>
-                                <button class="opcion-btn" data-tipo="granizado" onclick="cambiarTipo(this, 'mango', 13000)">Granizado +$1K</button>
+                                <button class="opcion-btn activo" data-tipo="basico" onclick="cambiarTipo(this, 'hbo', 6500)">Básico</button>
+                                <button class="opcion-btn" data-tipo="premium" onclick="cambiarTipo(this, 'hbo', 9500)">Premium</button>
                             </div>
                         </div>
-
                         <div class="cantidad-selector">
                             <span class="cantidad-label">Cantidad:</span>
                             <div class="cantidad-controls">
-                                <button class="cantidad-btn" onclick="cambiarCantidad('mango', -1)">−</button>
-                                <input type="number" class="cantidad-input" id="cantidad-mango" value="1" min="1" max="100">
-                                <button class="cantidad-btn" onclick="cambiarCantidad('mango', 1)">+</button>
+                                <button class="cantidad-btn" onclick="cambiarCantidad('hbo', -1)">−</button>
+                                <input type="number" class="cantidad-input" id="cantidad-hbo" value="1" min="1" max="100">
+                                <button class="cantidad-btn" onclick="cambiarCantidad('hbo', 1)">+</button>
                             </div>
                         </div>
-
-                        <button class="btn-agregar" onclick="agregarAlCarrito('Mango Biche', 12000, 'mango')">➤ Añadir a la Misión</button>
+                        <button class="btn-agregar" onclick="agregarAlCarrito('HBO Max', 6500, 'hbo')">➤ Añadir al carrito</button>
                     </div>
                 </div>
 
-                <!-- LIMONADA -->
                 <div class="producto-card">
-                    <img src="images/limonada.jpg" alt="Limonada" class="producto-imagen">
+                    <img src="images/spotify.svg" alt="Spotify Premium" class="producto-imagen">
                     <div class="producto-info">
-                        <div class="producto-nombre">Limonada</div>
-                        <div class="producto-descripcion">
-                            Refrescante, pura, directa. Como un soldado en la batalla. Limonada natural para los que sirven con honor.
-                        </div>
-                        <div class="producto-precio">$6.000</div>
-                        
+                        <div class="producto-nombre">Spotify Premium</div>
+                        <div class="producto-descripcion">Música sin anuncios, descargas y audio de alta calidad para cualquier momento.</div>
+                        <div class="producto-precio">$9.500</div>
                         <div class="opciones-bebida">
-                            <label class="opciones-label">Tipo de Bebida:</label>
+                            <label class="opciones-label">Plan:</label>
                             <div class="opciones-grupo">
-                                <button class="opcion-btn activo" data-tipo="normal" onclick="cambiarTipo(this, 'limonada', 6000)">Normal</button>
-                                <button class="opcion-btn" data-tipo="granizado" onclick="cambiarTipo(this, 'limonada', 7000)">Granizado +$1K</button>
+                                <button class="opcion-btn activo" data-tipo="basico" onclick="cambiarTipo(this, 'spotify', 9500)">Básico</button>
+                                <button class="opcion-btn" data-tipo="premium" onclick="cambiarTipo(this, 'spotify', 10900)">Premium</button>
                             </div>
                         </div>
-
                         <div class="cantidad-selector">
                             <span class="cantidad-label">Cantidad:</span>
                             <div class="cantidad-controls">
-                                <button class="cantidad-btn" onclick="cambiarCantidad('limonada', -1)">−</button>
-                                <input type="number" class="cantidad-input" id="cantidad-limonada" value="1" min="1" max="100">
-                                <button class="cantidad-btn" onclick="cambiarCantidad('limonada', 1)">+</button>
+                                <button class="cantidad-btn" onclick="cambiarCantidad('spotify', -1)">−</button>
+                                <input type="number" class="cantidad-input" id="cantidad-spotify" value="1" min="1" max="100">
+                                <button class="cantidad-btn" onclick="cambiarCantidad('spotify', 1)">+</button>
                             </div>
                         </div>
-
-                        <button class="btn-agregar" onclick="agregarAlCarrito('Limonada', 6000, 'limonada')">➤ Añadir a la Misión</button>
+                        <button class="btn-agregar" onclick="agregarAlCarrito('Spotify Premium', 9500, 'spotify')">➤ Añadir al carrito</button>
                     </div>
                 </div>
 
-                <!-- SALPICÓN CON HELADO -->
                 <div class="producto-card">
-                    <img src="images/salpicon.jpg" alt="Salpicón" class="producto-imagen">
+                    <img src="images/crunchyroll.svg" alt="Crunchyroll" class="producto-imagen">
                     <div class="producto-info">
-                        <div class="producto-nombre">Salpicón con Helado</div>
-                        <div class="producto-descripcion">
-                            La recompensa del guerrero después de la batalla. Frutas, hielo y gloria en cada vaso. Descansa conquistador, te lo mereces.
-                        </div>
-                        <div class="producto-precio">$13.000</div>
-                        
+                        <div class="producto-nombre">Crunchyroll</div>
+                        <div class="producto-descripcion">Anime subtitulado y doblado, simulcast y biblioteca premium para fans otaku.</div>
+                        <div class="producto-precio">$12.900</div>
                         <div class="opciones-bebida">
-                            <label class="opciones-label">Tipo de Bebida:</label>
+                            <label class="opciones-label">Plan:</label>
                             <div class="opciones-grupo">
-                                <button class="opcion-btn activo" data-tipo="normal" onclick="cambiarTipo(this, 'salpicon', 13000)">Normal</button>
-                                <button class="opcion-btn" data-tipo="granizado" onclick="cambiarTipo(this, 'salpicon', 14000)">Extra Helado +$1K</button>
+                                <button class="opcion-btn activo" data-tipo="basico" onclick="cambiarTipo(this, 'crunchyroll', 12900)">Básico</button>
+                                <button class="opcion-btn" data-tipo="premium" onclick="cambiarTipo(this, 'crunchyroll', 15900)">Premium</button>
                             </div>
                         </div>
-
                         <div class="cantidad-selector">
                             <span class="cantidad-label">Cantidad:</span>
                             <div class="cantidad-controls">
-                                <button class="cantidad-btn" onclick="cambiarCantidad('salpicon', -1)">−</button>
-                                <input type="number" class="cantidad-input" id="cantidad-salpicon" value="1" min="1" max="100">
-                                <button class="cantidad-btn" onclick="cambiarCantidad('salpicon', 1)">+</button>
+                                <button class="cantidad-btn" onclick="cambiarCantidad('crunchyroll', -1)">−</button>
+                                <input type="number" class="cantidad-input" id="cantidad-crunchyroll" value="1" min="1" max="100">
+                                <button class="cantidad-btn" onclick="cambiarCantidad('crunchyroll', 1)">+</button>
                             </div>
                         </div>
+                        <button class="btn-agregar" onclick="agregarAlCarrito('Crunchyroll', 12900, 'crunchyroll')">➤ Añadir al carrito</button>
+                    </div>
+                </div>
 
-                        <button class="btn-agregar" onclick="agregarAlCarrito('Salpicón con Helado', 13000, 'salpicon')">➤ Añadir a la Misión</button>
+                <div class="producto-card">
+                    <img src="images/youtube.svg" alt="YouTube Premium" class="producto-imagen">
+                    <div class="producto-info">
+                        <div class="producto-nombre">YouTube Premium</div>
+                        <div class="producto-descripcion">Videos sin anuncios, reproducción en segundo plano y acceso a YouTube Music.</div>
+                        <div class="producto-precio">$11.500</div>
+                        <div class="opciones-bebida">
+                            <label class="opciones-label">Plan:</label>
+                            <div class="opciones-grupo">
+                                <button class="opcion-btn activo" data-tipo="basico" onclick="cambiarTipo(this, 'youtube', 11500)">Básico</button>
+                                <button class="opcion-btn" data-tipo="premium" onclick="cambiarTipo(this, 'youtube', 13500)">Premium</button>
+                            </div>
+                        </div>
+                        <div class="cantidad-selector">
+                            <span class="cantidad-label">Cantidad:</span>
+                            <div class="cantidad-controls">
+                                <button class="cantidad-btn" onclick="cambiarCantidad('youtube', -1)">−</button>
+                                <input type="number" class="cantidad-input" id="cantidad-youtube" value="1" min="1" max="100">
+                                <button class="cantidad-btn" onclick="cambiarCantidad('youtube', 1)">+</button>
+                            </div>
+                        </div>
+                        <button class="btn-agregar" onclick="agregarAlCarrito('YouTube Premium', 11500, 'youtube')">➤ Añadir al carrito</button>
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <img src="images/universal.svg" alt="Universal+" class="producto-imagen">
+                    <div class="producto-info">
+                        <div class="producto-nombre">Universal+</div>
+                        <div class="producto-descripcion">Series y películas internacionales con señal premium y contenido exclusivo.</div>
+                        <div class="producto-precio">$8.900</div>
+                        <div class="opciones-bebida">
+                            <label class="opciones-label">Plan:</label>
+                            <div class="opciones-grupo">
+                                <button class="opcion-btn activo" data-tipo="basico" onclick="cambiarTipo(this, 'universal', 8900)">Básico</button>
+                                <button class="opcion-btn" data-tipo="premium" onclick="cambiarTipo(this, 'universal', 10900)">Premium</button>
+                            </div>
+                        </div>
+                        <div class="cantidad-selector">
+                            <span class="cantidad-label">Cantidad:</span>
+                            <div class="cantidad-controls">
+                                <button class="cantidad-btn" onclick="cambiarCantidad('universal', -1)">−</button>
+                                <input type="number" class="cantidad-input" id="cantidad-universal" value="1" min="1" max="100">
+                                <button class="cantidad-btn" onclick="cambiarCantidad('universal', 1)">+</button>
+                            </div>
+                        </div>
+                        <button class="btn-agregar" onclick="agregarAlCarrito('Universal+', 8900, 'universal')">➤ Añadir al carrito</button>
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <img src="images/combo-duo.svg" alt="Combo Duo" class="producto-imagen">
+                    <div class="producto-info">
+                        <div class="producto-nombre">Combo 2 Plataformas</div>
+                        <div class="producto-descripcion">Arma tu dúo ganador (ej: Disney+ + HBO Max o Spotify + YouTube Premium).</div>
+                        <div class="producto-precio">$18.900</div>
+                        <div class="opciones-bebida">
+                            <label class="opciones-label">Plan:</label>
+                            <div class="opciones-grupo">
+                                <button class="opcion-btn activo" data-tipo="basico" onclick="cambiarTipo(this, 'combo-duo', 18900)">Duo Smart</button>
+                                <button class="opcion-btn" data-tipo="premium" onclick="cambiarTipo(this, 'combo-duo', 22900)">Duo Plus</button>
+                            </div>
+                        </div>
+                        <div class="cantidad-selector">
+                            <span class="cantidad-label">Cantidad:</span>
+                            <div class="cantidad-controls">
+                                <button class="cantidad-btn" onclick="cambiarCantidad('combo-duo', -1)">−</button>
+                                <input type="number" class="cantidad-input" id="cantidad-combo-duo" value="1" min="1" max="100">
+                                <button class="cantidad-btn" onclick="cambiarCantidad('combo-duo', 1)">+</button>
+                            </div>
+                        </div>
+                        <button class="btn-agregar" onclick="agregarAlCarrito('Combo 2 Plataformas', 18900, 'combo-duo')">➤ Añadir al carrito</button>
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <img src="images/combo-trio.svg" alt="Combo Trio" class="producto-imagen">
+                    <div class="producto-info">
+                        <div class="producto-nombre">Combo 3 Plataformas</div>
+                        <div class="producto-descripcion">Disfruta más contenido combinando 3 plataformas populares en una sola compra.</div>
+                        <div class="producto-precio">$27.900</div>
+                        <div class="opciones-bebida">
+                            <label class="opciones-label">Plan:</label>
+                            <div class="opciones-grupo">
+                                <button class="opcion-btn activo" data-tipo="basico" onclick="cambiarTipo(this, 'combo-trio', 27900)">Trio Smart</button>
+                                <button class="opcion-btn" data-tipo="premium" onclick="cambiarTipo(this, 'combo-trio', 31900)">Trio Plus</button>
+                            </div>
+                        </div>
+                        <div class="cantidad-selector">
+                            <span class="cantidad-label">Cantidad:</span>
+                            <div class="cantidad-controls">
+                                <button class="cantidad-btn" onclick="cambiarCantidad('combo-trio', -1)">−</button>
+                                <input type="number" class="cantidad-input" id="cantidad-combo-trio" value="1" min="1" max="100">
+                                <button class="cantidad-btn" onclick="cambiarCantidad('combo-trio', 1)">+</button>
+                            </div>
+                        </div>
+                        <button class="btn-agregar" onclick="agregarAlCarrito('Combo 3 Plataformas', 27900, 'combo-trio')">➤ Añadir al carrito</button>
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <img src="images/combo-full.svg" alt="Combo Full" class="producto-imagen">
+                    <div class="producto-info">
+                        <div class="producto-nombre">Combo 4+ Plataformas</div>
+                        <div class="producto-descripcion">Paquete completo para hogares intensivos: más entretenimiento, mejor ahorro mensual.</div>
+                        <div class="producto-precio">$35.900</div>
+                        <div class="opciones-bebida">
+                            <label class="opciones-label">Plan:</label>
+                            <div class="opciones-grupo">
+                                <button class="opcion-btn activo" data-tipo="basico" onclick="cambiarTipo(this, 'combo-full', 35900)">Full Smart</button>
+                                <button class="opcion-btn" data-tipo="premium" onclick="cambiarTipo(this, 'combo-full', 39900)">Full Ultra</button>
+                            </div>
+                        </div>
+                        <div class="cantidad-selector">
+                            <span class="cantidad-label">Cantidad:</span>
+                            <div class="cantidad-controls">
+                                <button class="cantidad-btn" onclick="cambiarCantidad('combo-full', -1)">−</button>
+                                <input type="number" class="cantidad-input" id="cantidad-combo-full" value="1" min="1" max="100">
+                                <button class="cantidad-btn" onclick="cambiarCantidad('combo-full', 1)">+</button>
+                            </div>
+                        </div>
+                        <button class="btn-agregar" onclick="agregarAlCarrito('Combo 4+ Plataformas', 35900, 'combo-full')">➤ Añadir al carrito</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- MOTIVACIÓN 2 -->
         <div class="motivacional">
-            "Tu hidratación es nuestra misión. Confía en nosotros para mantener tu cuerpo en combate."
+            "Compra individual o en combo y recibe activación rápida con asistencia directa de tuplataforma."
         </div>
 
-        <!-- FORMULARIO -->
         <section class="formulario-section">
-            <div class="formulario-titulo">📋 Datos del Hombre de Guerra</div>
+            <div class="formulario-titulo">📋 Datos de tu pedido</div>
             
             <form id="formulario-orden">
                 <div class="form-grid">
                     <div class="form-grupo">
-                        <label class="form-label">Nombre Completo (Soldado)</label>
-                        <input type="text" id="nombre" class="form-input" placeholder="Tu nombre de combate" required>
+                        <label class="form-label">Nombre completo</label>
+                        <input type="text" id="nombre" class="form-input" placeholder="Tu nombre" required>
                     </div>
 
                     <div class="form-grupo">
-                        <label class="form-label">Teléfono de Contacto</label>
-                        <input type="tel" id="telefono" class="form-input" placeholder="Tu número de comunicación" required>
+                        <label class="form-label">Teléfono de contacto</label>
+                        <input type="tel" id="telefono" class="form-input" placeholder="Tu número" required>
                     </div>
                 </div>
 
                 <div class="form-grid">
                     <div class="form-grupo">
-                        <label class="form-label">Rango</label>
-                        <input type="text" id="rango" class="form-input" placeholder="ej. Soldado, Cabo, Sargento, Teniente, etc.">
+                        <label class="form-label">Perfil</label>
+                        <input type="text" id="rango" class="form-input" placeholder="Ej. personal, hogar, pareja, estudiante">
                     </div>
 
                     <div class="form-grupo">
-                        <label class="form-label">Ubicación o Dependencia</label>
-                        <input type="text" id="ubicacion" class="form-input" placeholder="Ubicación o dependencia" required>
+                        <label class="form-label">Ciudad / ubicación</label>
+                        <input type="text" id="ubicacion" class="form-input" placeholder="Ciudad o zona" required>
                     </div>
                 </div>
 
                 <div class="form-grupo">
-                    <label class="form-label">Notas Especiales (Observaciones de Combate)</label>
-                    <input type="text" id="notas" class="form-input" placeholder="Instrucciones especiales para tu entrega">
+                    <label class="form-label">Notas especiales</label>
+                    <input type="text" id="notas" class="form-input" placeholder="Plataformas deseadas para combos, horarios de contacto, etc.">
                 </div>
 
-                <button type="submit" class="btn-whatsapp">📱 COMPLETAR MISIÓN VÍA WHATSAPP</button>
+                <button type="submit" class="btn-whatsapp">📱 FINALIZAR PEDIDO VÍA WHATSAPP</button>
             </form>
         </section>
     </div>
 
-    <!-- CARRITO FLOTANTE -->
     <div class="carrito-flotante vacio" id="carrito-flotante">
-        <div class="carrito-titulo">📦 Resumen de Operaciones</div>
+        <div class="carrito-titulo">🛒 Resumen de compra</div>
         <div class="carrito-count" id="carrito-cantidad">0</div>
         <div class="carrito-items" id="carrito-items">
-            <div style="color: #5a3817; font-size: 11px;">Tu arsenal está vacío</div>
+            <div style="color: #64748b; font-size: 11px;">Aún no has añadido plataformas</div>
         </div>
         <div class="carrito-total">
             Total: <span id="carrito-total-monto">$0</span>
         </div>
-        <button class="btn-completar" onclick="document.getElementById('formulario-orden').scrollIntoView({behavior: 'smooth'})">⬇️ Ir al Formulario</button>
+        <button class="btn-completar" onclick="document.getElementById('formulario-orden').scrollIntoView({behavior: 'smooth'})">⬇️ Ir al formulario</button>
     </div>
 
-    <!-- FOOTER -->
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-title">⚔️ Escuela de Soldados Profesionales ⚔️</div>
-                <p>Nilo, Cundinamarca</p>
-                <p>Servimos con honor. Hidratación táctica para defensores.</p>
-                <div class="footer-eslogan">"La disciplina es la llave de la victoria"</div>
+                <div class="footer-title">🎬 tuplataforma</div>
+                <p>Venta digital de cuentas y combos de streaming</p>
+                <p>Soporte rápido • Activación ágil • Atención por WhatsApp</p>
+                <div class="footer-eslogan">"Tu entretenimiento premium, a precios lógicos"</div>
             </div>
         </div>
     </footer>
 
     <script>
-        // Variables globales
         let carrito = [];
         let preciosPorProducto = {
-            'maracuyada': { normal: 13000, granizado: 14000 },
-            'lulada': { normal: 13000, granizado: 14000 },
-            'mango': { normal: 12000, granizado: 13000 },
-            'limonada': { normal: 6000, granizado: 7000 },
-            'salpicon': { normal: 13000, granizado: 14000 }
+            'netflix': { basico: 19500, premium: 21000 },
+            'disney': { basico: 6900, premium: 7900 },
+            'hbo': { basico: 6500, premium: 9500 },
+            'spotify': { basico: 9500, premium: 10900 },
+            'crunchyroll': { basico: 12900, premium: 15900 },
+            'youtube': { basico: 11500, premium: 13500 },
+            'universal': { basico: 8900, premium: 10900 },
+            'combo-duo': { basico: 18900, premium: 22900 },
+            'combo-trio': { basico: 27900, premium: 31900 },
+            'combo-full': { basico: 35900, premium: 39900 }
         };
 
         let tiposPorProducto = {
-            'maracuyada': 'normal',
-            'lulada': 'normal',
-            'mango': 'normal',
-            'limonada': 'normal',
-            'salpicon': 'normal'
+            'netflix': 'basico',
+            'disney': 'basico',
+            'hbo': 'basico',
+            'spotify': 'basico',
+            'crunchyroll': 'basico',
+            'youtube': 'basico',
+            'universal': 'basico',
+            'combo-duo': 'basico',
+            'combo-trio': 'basico',
+            'combo-full': 'basico'
         };
 
-        // Cambiar tipo de bebida
         function cambiarTipo(btn, producto, nuevoPrecio) {
             const parent = btn.parentElement;
             parent.querySelectorAll('.opcion-btn').forEach(b => b.classList.remove('activo'));
@@ -878,12 +976,10 @@
             const tipo = btn.dataset.tipo;
             tiposPorProducto[producto] = tipo;
 
-            // Actualizar el precio mostrado
             const card = btn.closest('.producto-card');
             card.querySelector('.producto-precio').textContent = '$' + nuevoPrecio.toLocaleString('es-CO');
         }
 
-        // Cambiar cantidad
         function cambiarCantidad(producto, cambio) {
             const input = document.getElementById(`cantidad-${producto}`);
             let nueva = parseInt(input.value) + cambio;
@@ -892,14 +988,11 @@
             }
         }
 
-        // Agregar al carrito
         function agregarAlCarrito(nombre, precioBase, idProducto) {
             const cantidad = parseInt(document.getElementById(`cantidad-${idProducto}`).value);
             const tipo = tiposPorProducto[idProducto];
-            
-            // Obtener el precio según el tipo
             const precio = preciosPorProducto[idProducto][tipo];
-            
+
             const item = {
                 nombre: nombre,
                 tipo: tipo,
@@ -911,10 +1004,9 @@
 
             carrito.push(item);
             actualizarCarrito();
-            mostrarAlerta(`✓ ${nombre} (${tipo.toUpperCase()}) añadido a la misión`);
+            mostrarAlerta(`✓ ${nombre} (${tipo.toUpperCase()}) añadido al carrito`);
         }
 
-        // Actualizar carrito
         function actualizarCarrito() {
             const carritoElement = document.getElementById('carrito-flotante');
             const cantidadElement = document.getElementById('carrito-cantidad');
@@ -928,7 +1020,6 @@
 
             carritoElement.classList.remove('vacio');
 
-            // Contar items totales
             let totalItems = 0;
             let totalPrecio = 0;
 
@@ -936,13 +1027,13 @@
             carrito.forEach((item, index) => {
                 totalItems += item.cantidad;
                 totalPrecio += item.precioTotal;
-                
-                let tipoLabel = item.tipo === 'normal' ? '(Normal)' : item.nombre.includes('Salpicón') ? '(Extra Helado)' : '(Granizado)';
+
+                let tipoLabel = item.tipo === 'basico' ? '(Básico)' : '(Premium)';
                 itemsHTML += `
                     <div class="carrito-item">
                         <div class="carrito-item-nombre">${item.nombre} ${tipoLabel}</div>
                         <div class="carrito-item-cantidad">x${item.cantidad} = $${item.precioTotal.toLocaleString('es-CO')}</div>
-                        <button onclick="eliminarDelCarrito(${index})" style="background: none; border: none; color: #6b7280; cursor: pointer; font-size: 10px;">Eliminar</button>
+                        <button onclick="eliminarDelCarrito(${index})" style="background: none; border: none; color: #94a3b8; cursor: pointer; font-size: 10px;">Eliminar</button>
                     </div>
                 `;
             });
@@ -952,13 +1043,11 @@
             totalElement.textContent = '$' + totalPrecio.toLocaleString('es-CO');
         }
 
-        // Eliminar del carrito
         function eliminarDelCarrito(index) {
             carrito.splice(index, 1);
             actualizarCarrito();
         }
 
-        // Mostrar alerta
         function mostrarAlerta(mensaje) {
             const alerta = document.createElement('div');
             alerta.className = 'alerta';
@@ -970,12 +1059,11 @@
             }, 3000);
         }
 
-        // Manejar envío del formulario
         document.getElementById('formulario-orden').addEventListener('submit', function(e) {
             e.preventDefault();
 
             if (carrito.length === 0) {
-                mostrarAlerta('❌ ERROR: Añade productos a tu misión antes de continuar');
+                mostrarAlerta('❌ ERROR: Añade plataformas antes de continuar');
                 return;
             }
 
@@ -990,21 +1078,20 @@
                 return;
             }
 
-            // Construir mensaje WhatsApp
-            let mensaje = `🎖️ *ORDEN DE HIDRATACIÓN TÁCTICA* 🎖️\n\n`;
-            mensaje += `👤 *SOLDADO:* ${nombre}\n`;
+            let mensaje = `🎬 *PEDIDO - TUPLATAFORMA* 🎬\n\n`;
+            mensaje += `👤 *CLIENTE:* ${nombre}\n`;
             if (rango) {
-                mensaje += `🎖️ *RANGO:* ${rango}\n`;
+                mensaje += `🧩 *PERFIL:* ${rango}\n`;
             }
             mensaje += `📍 *UBICACIÓN:* ${ubicacion}\n`;
             mensaje += `☎️ *CONTACTO:* ${telefono}\n`;
             mensaje += `\n*═══════════════════════════*\n`;
-            mensaje += `*ARMAMENTO REFRESCANTE:*\n`;
+            mensaje += `*PLATAFORMAS SOLICITADAS:*\n`;
             mensaje += `*═══════════════════════════*\n\n`;
 
             let totalPrecio = 0;
             carrito.forEach(item => {
-                let tipoLabel = item.tipo === 'normal' ? 'Normal' : item.nombre.includes('Salpicón') ? 'Extra Helado' : 'Granizado';
+                let tipoLabel = item.tipo === 'basico' ? 'Básico' : 'Premium';
                 mensaje += `✓ ${item.nombre} (${tipoLabel})\n`;
                 mensaje += `   Cantidad: ${item.cantidad}x\n`;
                 mensaje += `   Precio: $${item.precioTotal.toLocaleString('es-CO')}\n\n`;
@@ -1014,23 +1101,21 @@
             mensaje += `*═══════════════════════════*\n`;
             mensaje += `💰 *TOTAL A PAGAR:* $${totalPrecio.toLocaleString('es-CO')}\n`;
             mensaje += `*═══════════════════════════*\n\n`;
-            mensaje += `💳 *FORMA DE PAGO:* Efectivo al recibir\n`;
+            mensaje += `💳 *FORMA DE PAGO:* Transferencia o acuerdo por chat\n`;
 
             if (notas) {
                 mensaje += `📝 *NOTAS:* ${notas}\n`;
             }
 
-            mensaje += `\n🎯 *¡Hidratación Táctica Confirmada!* 🎯`;
+            mensaje += `\n🚀 *¡Pedido listo para activar!*`;
 
-            // Enviar a WhatsApp
-            const numeroWhatsApp = '573025269081';
+            const numeroWhatsApp = '3234953988';
             const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
             window.open(urlWhatsApp, '_blank');
 
-            mostrarAlerta('✓ Misión enviada a WhatsApp');
+            mostrarAlerta('✓ Pedido enviado a WhatsApp');
         });
 
-        // Inicializar
         actualizarCarrito();
     </script>
 </body>
